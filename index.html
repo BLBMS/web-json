@@ -7,7 +7,7 @@
     <style>
         body { font-family: monospace; background-color: black; color: white; }
         .container { display: flex; flex-wrap: wrap; gap: 20px; }
-        .table-container { flex: 1; min-width: 300px; }
+        .table-container { flex: 1; min-width: 250px; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; }
         th { background-color: #222; }
@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <h2>Devices</h2>
+    <h2>api-ccminer by blbMS</h2>
     <div class="container" id="tables-container"></div>
 
     <script>
@@ -26,7 +26,7 @@
             const response = await fetch(url);
             const data = await response.json();
 
-            const columns = 3; // Število stolpcev
+            const columns = 4; // Število stolpcev
             const rowsPerColumn = Math.ceil(data.length / columns);
             let tablesContainer = document.getElementById("tables-container");
             tablesContainer.innerHTML = "";
@@ -44,7 +44,13 @@
 
                 columnData.forEach(item => {
                     let mhs = parseFloat(item.MHS);
-                    let colorClass = mhs >= 5 ? "blue" : "red";
+                    let colorClass = "";
+
+                    if (item.MHS === "OFF-LINE" || mhs < 3) {
+                        colorClass = "red";
+                    } else if (mhs >= 5) {
+                        colorClass = "blue";
+                    }
 
                     tableHTML += `
                         <tr>
