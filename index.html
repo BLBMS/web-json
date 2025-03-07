@@ -11,8 +11,17 @@
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; }
         th { background-color: #222; }
-        .red { color: red; }
+
+        /* Barve za MHS */
+        .red { color: red; } /* Samo za "OFF-LINE" */
+        .black { color: white; } /* Podčrtaji "_" ostanejo črni */
         .blue { color: cyan; }
+
+        /* Barve za POOL */
+        .pool-farm { color: lime; }
+        .pool-verus { color: orange; }
+        .pool-luckpool { color: yellow; }
+        .pool-vipor { color: violet; }
     </style>
 </head>
 <body>
@@ -44,20 +53,32 @@
 
                 columnData.forEach(item => {
                     let mhs = parseFloat(item.MHS);
-                    let colorClass = "";
+                    let mhsColorClass = "";
+                    let poolColorClass = "";
 
-                    if (item.MHS === "OFF-LINE" || mhs < 3) {
-                        colorClass = "red";
+                    // Barve za MHS
+                    if (item.MHS === "OFF-LINE") {
+                        mhsColorClass = "red"; // "OFF-LINE" rdeče
+                    } else if (item.MHS.includes("_")) {
+                        mhsColorClass = "black"; // Podčrtaji "_" ostanejo črni
+                    } else if (mhs < 3) {
+                        mhsColorClass = "red";
                     } else if (mhs >= 5) {
-                        colorClass = "blue";
+                        mhsColorClass = "blue";
                     }
+
+                    // Barve za POOL
+                    if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
+                    if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
+                    if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
+                    if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
 
                     tableHTML += `
                         <tr>
                             <td>${item.PHONE}</td>
                             <td>${item.HOST}</td>
-                            <td>${item.POOL}</td>
-                            <td class="${colorClass}">${item.MHS}</td>
+                            <td class="${poolColorClass}">${item.POOL}</td>
+                            <td class="${mhsColorClass}">${item.MHS}</td>
                         </tr>`;
                 });
 
