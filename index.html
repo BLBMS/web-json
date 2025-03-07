@@ -6,64 +6,62 @@
     <title>api-ccminer by blbMS</title>
     <style>
         body { font-family: monospace; background-color: black; color: white; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .table-container { flex: 1; min-width: 300px; }
         table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid gray; padding: 8px; text-align: left; }
+        th, td { border: 1px solid gray; padding: 5px; text-align: left; }
         th { background-color: #222; }
         .red { color: red; }
-        .yellow { color: yellow; }
-        .white { color: white; }
         .blue { color: cyan; }
-        .gray { color: gray; }
     </style>
 </head>
 <body>
 
-    <h2>Seznam Naprav</h2>
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th>PHONE</th>
-                <th>HOST</th>
-                <th>POOL</th>
-                <th>MHS</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <h2>Devices</h2>
+    <div class="container" id="tables-container"></div>
 
     <script>
         async function loadData() {
-            const url = "data.json"; // Tukaj vstavi pravo pot do JSON datoteke
+            const url = "data.json"; // Pravilna pot do JSON datoteke
             const response = await fetch(url);
             const data = await response.json();
 
-            const tableBody = document.querySelector("#data-table tbody");
-            tableBody.innerHTML = "";
-            
-            data.forEach(item => {
-                let mhs = parseFloat(item.MHS);
-                let colorClass = "gray";
-                
-                if (mhs >= 9) colorClass = "blue";
-                else if (mhs >= 5) colorClass = "white";
-                else if (mhs >= 4) colorClass = "yellow";
-                else if (mhs >= 3) colorClass = "gray";
-                else if (mhs >= 2) colorClass = "red";
+            const columns = 3; // Število stolpcev
+            const rowsPerColumn = Math.ceil(data.length / columns);
+            let tablesContainer = document.getElementById("tables-container");
+            tablesContainer.innerHTML = "";
 
-                const row = `
-                    <tr>
-                        <td>${item.PHONE}</td>
-                        <td>${item.HOST}</td>
-                        <td>${item.POOL}</td>
-                        <td class="${colorClass}">${item.MHS}</td>
-                    </tr>
-                `;
-                tableBody.innerHTML += row;
+            let columnsData = Array.from({ length: columns }, () => []);
+
+            data.forEach((item, index) => {
+                let columnIndex = index % columns;
+                columnsData[columnIndex].push(item);
+            });
+
+            columnsData.forEach(columnData => {
+                let tableHTML = `<div class="table-container"><table><thead>
+                    <tr><th>PHONE</th><th>HOST</th><th>POOL</th><th>MHS</th></tr></thead><tbody>`;
+
+                columnData.forEach(item => {
+                    let mhs = parseFloat(item.MHS);
+                    let colorClass = mhs >= 5 ? "blue" : "red";
+
+                    tableHTML += `
+                        <tr>
+                            <td>${item.PHONE}</td>
+                            <td>${item.HOST}</td>
+                            <td>${item.POOL}</td>
+                            <td class="${colorClass}">${item.MHS}</td>
+                        </tr>`;
+                });
+
+                tableHTML += `</tbody></table></div>`;
+                tablesContainer.innerHTML += tableHTML;
             });
         }
 
         loadData();
-        setInterval(loadData, 15 * 60 * 1000); // Osveževanje vsakih 15 minut
+        setInterval(loadData, 60 * 1000); // Osveževanje vsako minuto
     </script>
 
 </body>
