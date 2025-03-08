@@ -1,1 +1,925 @@
-
+{
+  "DATE": [
+    "21:39:11 08.03.2025"
+  ],
+  "DATA": [
+    {
+      "PHONE": "13600K",
+      "HOST": "000.031.130.033",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9a",
+      "HOST": "100.110",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9b",
+      "HOST": "100.111",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9c",
+      "HOST": "100.112",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9d",
+      "HOST": "100.113",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9e",
+      "HOST": "100.114",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9f",
+      "HOST": "100.115",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9g",
+      "HOST": "100.116",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9h",
+      "HOST": "100.117",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9i",
+      "HOST": "100.118",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9j",
+      "HOST": "100.119",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9k",
+      "HOST": "100.120",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9l",
+      "HOST": "100.121",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9m",
+      "HOST": "100.122",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9n",
+      "HOST": "100.123",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9o",
+      "HOST": "100.124",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9p",
+      "HOST": "100.125",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9q",
+      "HOST": "100.126",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9r",
+      "HOST": "100.127",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9s",
+      "HOST": "100.128",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9t",
+      "HOST": "100.129",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S9u",
+      "HOST": "100.209",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "J7b",
+      "HOST": "100.131",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "J7c",
+      "HOST": "100.132",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "J7d",
+      "HOST": "100.133",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "J7e",
+      "HOST": "100.134",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "J7f",
+      "HOST": "100.135",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "J7g",
+      "HOST": "100.136",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A5a",
+      "HOST": "000.168.100.137",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A5b",
+      "HOST": "100.138",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A5c",
+      "HOST": "100.139",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A5d",
+      "HOST": "100.140",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A40a",
+      "HOST": "000.168.100.141",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A8a",
+      "HOST": "100.142",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A8b",
+      "HOST": "100.143",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A8c",
+      "HOST": "100.144",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A5e",
+      "HOST": "100.147",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S7a",
+      "HOST": "100.149",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10a",
+      "HOST": "100.150",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10b",
+      "HOST": "100.151",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10c",
+      "HOST": "100.152",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10d",
+      "HOST": "100.153",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10e",
+      "HOST": "100.154",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10f",
+      "HOST": "100.155",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10g",
+      "HOST": "100.156",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10h",
+      "HOST": "000.168.100.157",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10i",
+      "HOST": "100.158",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10j",
+      "HOST": "000.168.100.159",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10k",
+      "HOST": "000.168.100.160",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S10l",
+      "HOST": "100.161",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "N8a",
+      "HOST": "100.169",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8a",
+      "HOST": "100.170",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8b",
+      "HOST": "100.171",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8c",
+      "HOST": "100.172",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8d",
+      "HOST": "100.173",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8e",
+      "HOST": "100.174",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8f",
+      "HOST": "100.175",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8g",
+      "HOST": "100.176",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8h",
+      "HOST": "100.177",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8i",
+      "HOST": "100.178",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8j",
+      "HOST": "100.179",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8k",
+      "HOST": "100.180",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8l",
+      "HOST": "100.181",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8m",
+      "HOST": "100.182",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8n",
+      "HOST": "100.183",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8o",
+      "HOST": "100.184",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8p",
+      "HOST": "100.185",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8q",
+      "HOST": "100.186",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8r",
+      "HOST": "100.187",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8s",
+      "HOST": "100.188",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8t",
+      "HOST": "100.189",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8u",
+      "HOST": "100.190",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8v",
+      "HOST": "100.191",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8w",
+      "HOST": "100.192",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8x",
+      "HOST": "100.193",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8y",
+      "HOST": "100.194",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8z",
+      "HOST": "100.195",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8aa",
+      "HOST": "100.196",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ab",
+      "HOST": "100.197",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ac",
+      "HOST": "100.198",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ad",
+      "HOST": "100.167",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ae",
+      "HOST": "100.168",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8af",
+      "HOST": "100.166",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ag",
+      "HOST": "100.165",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ah",
+      "HOST": "100.164",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ai",
+      "HOST": "100.163",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8aj",
+      "HOST": "100.162",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ak",
+      "HOST": "100.206",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8al",
+      "HOST": "100.109",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8am",
+      "HOST": "100.108",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8an",
+      "HOST": "100.107",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "S8ao",
+      "HOST": "100.106",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20a",
+      "HOST": "000.168.100.210",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20b",
+      "HOST": "000.168.100.211",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20c",
+      "HOST": "100.212",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20d",
+      "HOST": "100.213",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20e",
+      "HOST": "000.168.100.214",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20f",
+      "HOST": "100.215",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20g",
+      "HOST": "000.168.100.216",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20h",
+      "HOST": "100.217",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20i",
+      "HOST": "100.218",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20j",
+      "HOST": "100.219",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20k",
+      "HOST": "100.220",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P20m",
+      "HOST": "100.222",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P10a",
+      "HOST": "100.225",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "M20a",
+      "HOST": "100.226",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "PF1a",
+      "HOST": "000.168.100.230",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P9a",
+      "HOST": "100.235",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P9b",
+      "HOST": "100.236",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "P9c",
+      "HOST": "100.237",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "HNRa",
+      "HOST": "100.240",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "HNRb",
+      "HOST": "100.241",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "HNRc",
+      "HOST": "100.242",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "MIa",
+      "HOST": "000.168.100.247",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "PXa",
+      "HOST": "000.168.100.248",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "LGa",
+      "HOST": "100.249",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30a",
+      "HOST": "000.168.102.001",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30b",
+      "HOST": "102.002",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30c",
+      "HOST": "102.003",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30d",
+      "HOST": "102.004",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30e",
+      "HOST": "102.005",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30f",
+      "HOST": "102.006",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30g",
+      "HOST": "102.007",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A30h",
+      "HOST": "102.008",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41a",
+      "HOST": "000.168.102.051",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41b",
+      "HOST": "000.168.102.052",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41c",
+      "HOST": "000.168.102.053",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41d",
+      "HOST": "000.168.102.054",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41e",
+      "HOST": "000.168.102.055",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41f",
+      "HOST": "000.168.102.056",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41g",
+      "HOST": "000.168.102.057",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A41h",
+      "HOST": "000.168.102.058",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50a",
+      "HOST": "102.101",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50b",
+      "HOST": "102.102",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50c",
+      "HOST": "102.103",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50d",
+      "HOST": "102.104",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50e",
+      "HOST": "102.105",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50f",
+      "HOST": "102.106",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50g",
+      "HOST": "102.107",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50h",
+      "HOST": "102.108",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50i",
+      "HOST": "102.109",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50j",
+      "HOST": "102.110",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A50k",
+      "HOST": "102.111",
+      "POOL": "farm",
+      "MHS": "3.992"
+    },
+    {
+      "PHONE": "A50l",
+      "HOST": "102.112",
+      "POOL": "farm",
+      "MHS": "4.095"
+    },
+    {
+      "PHONE": "A70a",
+      "HOST": "102.201",
+      "POOL": "farm",
+      "MHS": "5.057"
+    },
+    {
+      "PHONE": "A70b",
+      "HOST": "102.202",
+      "POOL": "farm",
+      "MHS": "5.007"
+    },
+    {
+      "PHONE": "A70c",
+      "HOST": "102.203",
+      "POOL": "farm",
+      "MHS": "5.057"
+    },
+    {
+      "PHONE": "A70d",
+      "HOST": "102.204",
+      "POOL": "farm",
+      "MHS": "5.070"
+    },
+    {
+      "PHONE": "A70e",
+      "HOST": "102.205",
+      "POOL": "farm",
+      "MHS": "5.077"
+    },
+    {
+      "PHONE": "A70f",
+      "HOST": "102.206",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A70g",
+      "HOST": "102.207",
+      "POOL": "farm",
+      "MHS": "5.090"
+    },
+    {
+      "PHONE": "A70h",
+      "HOST": "102.208",
+      "POOL": "farm",
+      "MHS": "5.055"
+    },
+    {
+      "PHONE": "HNRb",
+      "HOST": "100.241",
+      "POOL": "OFF-LINE",
+      "MHS": "0.000"
+    }
+  ]
+}
