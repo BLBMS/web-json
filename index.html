@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="sl">
-<!-- v.005 -->
+<!-- v.006 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.005</h2>
+    <h2>api-ccminer by blbMS 2025 v.006</h2>
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
@@ -36,9 +36,16 @@
 
             document.getElementById("date-container").innerText = data.DATE[0];
 
+            // Preveri število podatkov
+            const numDevices = data.DATA.length;
+            if (numDevices === 0) {
+                alert("Ni podatkov za prikaz.");
+                return;
+            }
+
             // Prilagoditev števila stolpcev glede na širino okna
-            const columns = calculateColumns();
-            const rowsPerColumn = Math.ceil(data.DATA.length / columns);
+            const columns = calculateColumns(numDevices);
+            const rowsPerColumn = Math.ceil(numDevices / columns);
             let tablesContainer = document.getElementById("tables-container");
             tablesContainer.innerHTML = "";
 
@@ -50,51 +57,59 @@
                 columnsData[columnIndex].push(item);
             });
 
-            columnsData.forEach(columnData => {
-                let tableHTML = `<div class="table-container"><table><thead>
-                    <tr><th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th></tr></thead><tbody>`;
+            // Ustvari enotno tabelo z več stolpci
+            let tableHTML = `<div class="table-container"><table><thead>
+                <tr><th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th></tr></thead><tbody>`;
 
-                columnData.forEach(item => {
-                    let mhs = parseFloat(item.MHS);
-                    let mhsColorClass = "";
-                    let poolColorClass = "";
+            // Generiraj podatke za vsak stolpec in dodaj v tabelo
+            for (let i = 0; i < rowsPerColumn; i++) {
+                for (let j = 0; j < columns; j++) {
+                    const item = columnsData[j][i];
+                    if (item) {
+                        let mhs = parseFloat(item.MHS);
+                        let mhsColorClass = "";
+                        let poolColorClass = "";
 
-                    if (item.MHS.includes("_")) {
-                        mhsColorClass = "black";
-                    } else if (mhs < 3) {
-                        mhsColorClass = "red";
-                    } else if (mhs >= 5) {
-                        mhsColorClass = "blue";
+                        if (item.MHS.includes("_")) {
+                            mhsColorClass = "black";
+                        } else if (mhs < 3) {
+                            mhsColorClass = "red";
+                        } else if (mhs >= 5) {
+                            mhsColorClass = "blue";
+                        }
+
+                        if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
+                        if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
+                        if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
+                        if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
+                        if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
+
+                        tableHTML += ` 
+                            <tr>
+                                <td>${item.PHONE}</td>
+                                <td>${item.HOST}</td>
+                                <td class="${poolColorClass}">${item.POOL}</td>
+                                <td class="${mhsColorClass}">${item.MHS}</td>
+                            </tr>`;
                     }
+                }
+            }
 
-                    if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
-                    if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
-                    if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
-                    if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
-                    if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
-
-                    tableHTML += `
-                        <tr>
-                            <td>${item.PHONE}</td>
-                            <td>${item.HOST}</td>
-                            <td class="${poolColorClass}">${item.POOL}</td>
-                            <td class="${mhsColorClass}">${item.MHS}</td>
-                        </tr>`;
-                });
-
-                tableHTML += `</tbody></table></div>`;
-                tablesContainer.innerHTML += tableHTML;
-            });
+            tableHTML += `</tbody></table></div>`;
+            tablesContainer.innerHTML += tableHTML;
         }
 
-        // Funkcija za izračun števila stolpcev na podlagi širine okna
-        function calculateColumns() {
+        // Funkcija za izračun števila stolpcev na podlagi širine okna in števila naprav
+        function calculateColumns(numDevices) {
             const screenWidth = window.innerWidth;
             const columnWidth = 26; // Vsota širine vseh stolpcev (5 + 7 + 9 + 5)
             const maxColumns = Math.floor(screenWidth / columnWidth);
 
-            // Če je zaslon preozek, uporabimo 1 stolpec
-            return maxColumns > 0 ? maxColumns : 1;
+            // Zagotovimo, da se ne prikaže več stolpcev, kot je naprav
+            const calculatedColumns = Math.min(maxColumns, Math.ceil(numDevices / 10)); // Prikaz 10 naprav na stolpec
+
+            // Če je zaslon preozek ali imamo manj naprav, uporabljamo manj stolpcev
+            return calculatedColumns > 0 ? calculatedColumns : 1;
         }
 
         loadData();
