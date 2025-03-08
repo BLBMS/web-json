@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="sl">
-<!-- v.007 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>api-ccminer</title>
+    <title>api-ccminer</title> 
     <style>
         body { font-family: monospace; background-color: black; color: white; }
         .container { display: flex; flex-wrap: wrap; gap: 20px; }
         .table-container { flex: 1; min-width: 250px; max-width: 400px; }
-        table { border-collapse: collapse; width: 100%; }
+        table { border-collapse: collapse; width: auto; margin-right: 10px; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; }
         th { background-color: #222; }
         .red { color: red; }
@@ -24,7 +23,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.007</h2>
+    <h2>api-ccminer by blbMS 2025 v.009</h2> 
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
@@ -42,7 +41,6 @@
 
                 const devices = data.DATA;
                 const numDevices = devices.length;
-
                 if (numDevices === 0) {
                     alert("Ni podatkov za prikaz.");
                     return;
@@ -51,42 +49,54 @@
                 const tablesContainer = document.getElementById("tables-container");
                 tablesContainer.innerHTML = "";
 
-                devices.forEach(device => {
-                    let mhs = parseFloat(device.MHS || "0");
-                    let mhsColorClass = mhs < 3 ? "red" : mhs >= 5 ? "blue" : "";
+                // Izračun koliko stolpcev lahko gre na ekran
+                const screenWidth = window.innerWidth;
+                const maxColumns = Math.floor(screenWidth / (26 + 2)); // 26 znakov + 2 presledka
+                const columns = Math.min(maxColumns, numDevices);
+                const rowsPerColumn = Math.ceil(numDevices / columns);
 
-                    let poolColorClass = "";
-                    const pool = device.POOL ? device.POOL.toLowerCase() : "";
-                    if (pool.includes("off-line")) poolColorClass = "pool-off-line";
-                    if (pool.includes("farm")) poolColorClass = "pool-farm";
-                    if (pool.includes("verus")) poolColorClass = "pool-verus";
-                    if (pool.includes("luckpool")) poolColorClass = "pool-luckpool";
-                    if (pool.includes("vipor")) poolColorClass = "pool-vipor";
+                // Ustvari glavo tabele
+                let tableHTML = `<div class="table-container"><table><thead><tr>`;
 
-                    let tableHTML = `
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>DEVICE</th>
-                                        <th>IP</th>
-                                        <th>POOL</th>
-                                        <th>MHS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>${device.PHONE || "Neznan"}</td>
-                                        <td>${device.HOST || "Neznan"}</td>
-                                        <td class="${poolColorClass}">${device.POOL || "Neznano"}</td>
-                                        <td class="${mhsColorClass}">${device.MHS || "0"}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>`;
+                for (let i = 0; i < columns; i++) {
+                    tableHTML += `<th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th><th>  </th>`;
+                }
+                tableHTML += `</tr></thead><tbody>`;
 
-                    tablesContainer.innerHTML += tableHTML;
-                });
+                // Napolni vrstico po vrstico
+                for (let i = 0; i < rowsPerColumn; i++) {
+                    tableHTML += "<tr>";
+                    for (let j = 0; j < columns; j++) {
+                        const index = i + j * rowsPerColumn;
+                        if (index < numDevices) {
+                            const device = devices[index];
+                            let mhs = parseFloat(device.MHS || "0");
+                            let mhsColorClass = mhs < 3 ? "red" : mhs >= 5 ? "blue" : "";
+                            
+                            let poolColorClass = "";
+                            const pool = device.POOL ? device.POOL.toLowerCase() : "";
+                            if (pool.includes("off-line")) poolColorClass = "pool-off-line";
+                            if (pool.includes("farm")) poolColorClass = "pool-farm";
+                            if (pool.includes("verus")) poolColorClass = "pool-verus";
+                            if (pool.includes("luckpool")) poolColorClass = "pool-luckpool";
+                            if (pool.includes("vipor")) poolColorClass = "pool-vipor";
+
+                            tableHTML += `
+                                <td>${device.PHONE || ""}</td>
+                                <td>${device.HOST || ""}</td>
+                                <td class="${poolColorClass}">${device.POOL || ""}</td>
+                                <td class="${mhsColorClass}">${device.MHS || "0.000"}</td>
+                                <td>  </td>`;
+                        } else {
+                            tableHTML += `<td></td><td></td><td></td><td></td><td>  </td>`;
+                        }
+                    }
+                    tableHTML += "</tr>";
+                }
+
+                tableHTML += `</tbody></table></div>`;
+                tablesContainer.innerHTML += tableHTML;
+
             } catch (error) {
                 console.error("Napaka pri nalaganju podatkov:", error);
                 alert("Ne morem naložiti podatkov.");
@@ -99,3 +109,4 @@
 
 </body>
 </html>
+
