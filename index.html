@@ -23,7 +23,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.011</h2>
+    <h2>api-ccminer by blbMS 2025 v.012</h2>
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
@@ -49,9 +49,9 @@
 
             let columnsData = Array.from({ length: columns }, () => []);
 
-            // Razporedi podatke v stolpce
+            // Pravilna vertikalna razporeditev
             data.DATA.forEach((item, index) => {
-                let columnIndex = index % columns;
+                let columnIndex = Math.floor(index / rowsPerColumn);
                 columnsData[columnIndex].push(item);
             });
 
