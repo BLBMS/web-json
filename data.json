@@ -1,0 +1,67 @@
+{
+  "DATE": [
+    "16:09:23 08.03.2025"
+  ],
+  "DATA": [
+    {
+      "PHONE": "A50k",
+      "HOST": "102.111",
+      "POOL": "farm",
+      "MHS": "4.046"
+    },
+    {
+      "PHONE": "A50l",
+      "HOST": "102.112",
+      "POOL": "farm",
+      "MHS": "4.071"
+    },
+    {
+      "PHONE": "A70a",
+      "HOST": "102.201",
+      "POOL": "farm",
+      "MHS": "5.077"
+    },
+    {
+      "PHONE": "A70b",
+      "HOST": "102.202",
+      "POOL": "farm",
+      "MHS": "5.002"
+    },
+    {
+      "PHONE": "A70c",
+      "HOST": "102.203",
+      "POOL": "farm",
+      "MHS": "5.069"
+    },
+    {
+      "PHONE": "A70d",
+      "HOST": "102.204",
+      "POOL": "farm",
+      "MHS": "5.066"
+    },
+    {
+      "PHONE": "A70e",
+      "HOST": "102.205",
+      "POOL": "farm",
+      "MHS": "5.082"
+    },
+    {
+      "PHONE": "A70g",
+      "HOST": "102.207",
+      "POOL": "farm",
+      "MHS": "5.079"
+    },
+    {
+      "PHONE": "A70h",
+      "HOST": "102.208",
+      "POOL": "farm",
+      "MHS": "5.058"
+    },
+    {
+      "PHONE": "HNRb",
+      "HOST": "100.241",
+      "POOL": "OFF-LINE",
+      "MHS": "0.000"
+    }
+  ]
+}
