@@ -15,6 +15,7 @@
         .black { color: white; }
         .blue { color: cyan; }
         .pool-off-line { color: red; }
+        .pool-not-on-list { color: red; }
         .pool-farm { color: lime; }
         .pool-verus { color: orange; }
         .pool-luckpool { color: yellow; }
@@ -23,7 +24,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.012</h2>
+    <h2>api-ccminer by blbMS 2025 v.013</h2>
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
@@ -65,7 +66,7 @@
                     let mhsColorClass = "";
                     let poolColorClass = "";
 
-                    if (item.MHS.includes("_")) {
+                    if (item.MHS.includes("0.000")) {
                         mhsColorClass = "black";
                     } else if (mhs < 3) {
                         mhsColorClass = "red";
@@ -74,6 +75,7 @@
                     }
 
                     if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
+                    if (item.POOL.toLowerCase().includes("not-on-list")) poolColorClass = "pool-not-on-list";
                     if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
                     if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
                     if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
