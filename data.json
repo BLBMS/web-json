@@ -1,1 +1,115 @@
-
+{
+  "DATE": [
+    "21:51:20 08.03.2025"
+  ],
+  "DATA": [
+    {
+      "PHONE": "S10a",
+      "HOST": "100.150",
+      "POOL": "farm",
+      "MHS": "4.663"
+    },
+    {
+      "PHONE": "S10f",
+      "HOST": "100.155",
+      "POOL": "farm",
+      "MHS": "4.458"
+    },
+    {
+      "PHONE": "S10g",
+      "HOST": "100.156",
+      "POOL": "farm",
+      "MHS": "4.583"
+    },
+    {
+      "PHONE": "S10h",
+      "HOST": "100.157",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "HNRa",
+      "HOST": "100.240",
+      "POOL": "farm",
+      "MHS": "1.214"
+    },
+    {
+      "PHONE": "HNRb",
+      "HOST": "100.241",
+      "POOL": "OFF-LINE",
+      "MHS": "0.000"
+    },
+    {
+      "PHONE": "HNRc",
+      "HOST": "100.242",
+      "POOL": "farm",
+      "MHS": "5.048"
+    },
+    {
+      "PHONE": "A50j",
+      "HOST": "102.110",
+      "POOL": "farm",
+      "MHS": "4.199"
+    },
+    {
+      "PHONE": "A50k",
+      "HOST": "102.111",
+      "POOL": "farm",
+      "MHS": "3.993"
+    },
+    {
+      "PHONE": "A50l",
+      "HOST": "102.112",
+      "POOL": "farm",
+      "MHS": "4.111"
+    },
+    {
+      "PHONE": "A70a",
+      "HOST": "102.201",
+      "POOL": "farm",
+      "MHS": "5.060"
+    },
+    {
+      "PHONE": "A70b",
+      "HOST": "102.202",
+      "POOL": "farm",
+      "MHS": "5.002"
+    },
+    {
+      "PHONE": "A70c",
+      "HOST": "102.203",
+      "POOL": "farm",
+      "MHS": "5.063"
+    },
+    {
+      "PHONE": "A70d",
+      "HOST": "102.204",
+      "POOL": "farm",
+      "MHS": "5.085"
+    },
+    {
+      "PHONE": "A70e",
+      "HOST": "102.205",
+      "POOL": "farm",
+      "MHS": "5.072"
+    },
+    {
+      "PHONE": "A70f",
+      "HOST": "102.206",
+      "POOL": "NOT-ON-LIST",
+      "MHS": ""
+    },
+    {
+      "PHONE": "A70g",
+      "HOST": "102.207",
+      "POOL": "farm",
+      "MHS": "5.088"
+    },
+    {
+      "PHONE": "A70h",
+      "HOST": "102.208",
+      "POOL": "farm",
+      "MHS": "5.032"
+    }
+  ]
+}
