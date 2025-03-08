@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="sl">
-<!-- v.006 -->
+<!-- v.007 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <style>
         body { font-family: monospace; background-color: black; color: white; }
         .container { display: flex; flex-wrap: wrap; gap: 20px; }
-        .table-container { flex: 1; min-width: 250px; }
+        .table-container { flex: 1; min-width: 250px; max-width: 400px; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; }
         th { background-color: #222; }
@@ -24,96 +24,77 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.006</h2>
+    <h2>api-ccminer by blbMS 2025 v.007</h2>
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
     <script>
         async function loadData() {
-            const url = "data.json";
-            const response = await fetch(url);
-            const data = await response.json();
-
-            document.getElementById("date-container").innerText = data.DATE[0];
-
-            // Preveri število podatkov
-            const numDevices = data.DATA.length;
-            if (numDevices === 0) {
-                alert("Ni podatkov za prikaz.");
-                return;
-            }
-
-            // Prilagoditev števila stolpcev glede na širino okna
-            const columns = calculateColumns(numDevices);
-            const rowsPerColumn = Math.ceil(numDevices / columns);
-            let tablesContainer = document.getElementById("tables-container");
-            tablesContainer.innerHTML = "";
-
-            let columnsData = Array.from({ length: columns }, () => []);
-
-            // Razdelitev podatkov v stolpce
-            data.DATA.forEach((item, index) => {
-                let columnIndex = index % columns;
-                columnsData[columnIndex].push(item);
-            });
-
-            // Ustvari enotno tabelo z več stolpci
-            let tableHTML = `<div class="table-container"><table><thead>
-                <tr><th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th></tr></thead><tbody>`;
-
-            // Generiraj podatke za vsak stolpec in dodaj v tabelo
-            for (let i = 0; i < rowsPerColumn; i++) {
-                for (let j = 0; j < columns; j++) {
-                    const item = columnsData[j][i];
-                    if (item) {
-                        let mhs = parseFloat(item.MHS);
-                        let mhsColorClass = "";
-                        let poolColorClass = "";
-
-                        if (item.MHS.includes("_")) {
-                            mhsColorClass = "black";
-                        } else if (mhs < 3) {
-                            mhsColorClass = "red";
-                        } else if (mhs >= 5) {
-                            mhsColorClass = "blue";
-                        }
-
-                        if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
-                        if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
-                        if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
-                        if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
-                        if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
-
-                        tableHTML += ` 
-                            <tr>
-                                <td>${item.PHONE}</td>
-                                <td>${item.HOST}</td>
-                                <td class="${poolColorClass}">${item.POOL}</td>
-                                <td class="${mhsColorClass}">${item.MHS}</td>
-                            </tr>`;
-                    }
+            try {
+                const url = "data.json";
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("Napaka pri nalaganju podatkov");
                 }
+                const data = await response.json();
+
+                document.getElementById("date-container").innerText = data.DATE[0] || "Neznan datum";
+
+                const devices = data.DATA;
+                const numDevices = devices.length;
+
+                if (numDevices === 0) {
+                    alert("Ni podatkov za prikaz.");
+                    return;
+                }
+
+                const tablesContainer = document.getElementById("tables-container");
+                tablesContainer.innerHTML = "";
+
+                devices.forEach(device => {
+                    let mhs = parseFloat(device.MHS || "0");
+                    let mhsColorClass = mhs < 3 ? "red" : mhs >= 5 ? "blue" : "";
+
+                    let poolColorClass = "";
+                    const pool = device.POOL ? device.POOL.toLowerCase() : "";
+                    if (pool.includes("off-line")) poolColorClass = "pool-off-line";
+                    if (pool.includes("farm")) poolColorClass = "pool-farm";
+                    if (pool.includes("verus")) poolColorClass = "pool-verus";
+                    if (pool.includes("luckpool")) poolColorClass = "pool-luckpool";
+                    if (pool.includes("vipor")) poolColorClass = "pool-vipor";
+
+                    let tableHTML = `
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>DEVICE</th>
+                                        <th>IP</th>
+                                        <th>POOL</th>
+                                        <th>MHS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${device.PHONE || "Neznan"}</td>
+                                        <td>${device.HOST || "Neznan"}</td>
+                                        <td class="${poolColorClass}">${device.POOL || "Neznano"}</td>
+                                        <td class="${mhsColorClass}">${device.MHS || "0"}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>`;
+
+                    tablesContainer.innerHTML += tableHTML;
+                });
+            } catch (error) {
+                console.error("Napaka pri nalaganju podatkov:", error);
+                alert("Ne morem naložiti podatkov.");
             }
-
-            tableHTML += `</tbody></table></div>`;
-            tablesContainer.innerHTML += tableHTML;
-        }
-
-        // Funkcija za izračun števila stolpcev na podlagi širine okna in števila naprav
-        function calculateColumns(numDevices) {
-            const screenWidth = window.innerWidth;
-            const columnWidth = 26; // Vsota širine vseh stolpcev (5 + 7 + 9 + 5)
-            const maxColumns = Math.floor(screenWidth / columnWidth);
-
-            // Zagotovimo, da se ne prikaže več stolpcev, kot je naprav
-            const calculatedColumns = Math.min(maxColumns, Math.ceil(numDevices / 10)); // Prikaz 10 naprav na stolpec
-
-            // Če je zaslon preozek ali imamo manj naprav, uporabljamo manj stolpcev
-            return calculatedColumns > 0 ? calculatedColumns : 1;
         }
 
         loadData();
-        setInterval(loadData, 2 * 60 * 1000);
+        setInterval(loadData, 60 * 1000);
     </script>
 
 </body>
