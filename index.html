@@ -6,9 +6,9 @@
     <title>api-ccminer</title> 
     <style>
         body { font-family: monospace; background-color: black; color: white; }
-        .container { display: flex; flex-wrap: wrap; gap: 20px; }
-        .table-container { flex: 1; min-width: 250px; max-width: 400px; }
-        table { border-collapse: collapse; width: auto; margin-right: 10px; }
+        .container { display: flex; gap: 20px; justify-content: center; }
+        .table-container { display: flex; flex-direction: column; }
+        table { border-collapse: collapse; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; }
         th { background-color: #222; }
         .red { color: red; }
@@ -23,7 +23,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.009</h2> 
+    <h2>api-ccminer by blbMS 2025 v.010</h2> 
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
@@ -53,21 +53,21 @@
                 const screenWidth = window.innerWidth;
                 const maxColumns = Math.floor(screenWidth / (26 + 2)); // 26 znakov + 2 presledka
                 const columns = Math.min(maxColumns, numDevices);
-                const rowsPerColumn = Math.ceil(numDevices / columns);
+                const rows = Math.ceil(numDevices / columns);
 
-                // Ustvari glavo tabele
+                // Ustvari glave stolpcev
                 let tableHTML = `<div class="table-container"><table><thead><tr>`;
 
                 for (let i = 0; i < columns; i++) {
-                    tableHTML += `<th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th><th>  </th>`;
+                    tableHTML += `<th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th>`;
                 }
                 tableHTML += `</tr></thead><tbody>`;
 
-                // Napolni vrstico po vrstico
-                for (let i = 0; i < rowsPerColumn; i++) {
+                // Napolni stolpce vertikalno
+                for (let row = 0; row < rows; row++) {
                     tableHTML += "<tr>";
-                    for (let j = 0; j < columns; j++) {
-                        const index = i + j * rowsPerColumn;
+                    for (let col = 0; col < columns; col++) {
+                        const index = row + col * rows;
                         if (index < numDevices) {
                             const device = devices[index];
                             let mhs = parseFloat(device.MHS || "0");
@@ -85,17 +85,16 @@
                                 <td>${device.PHONE || ""}</td>
                                 <td>${device.HOST || ""}</td>
                                 <td class="${poolColorClass}">${device.POOL || ""}</td>
-                                <td class="${mhsColorClass}">${device.MHS || "0.000"}</td>
-                                <td>  </td>`;
+                                <td class="${mhsColorClass}">${device.MHS || "0.000"}</td>`;
                         } else {
-                            tableHTML += `<td></td><td></td><td></td><td></td><td>  </td>`;
+                            tableHTML += `<td></td><td></td><td></td><td></td>`;
                         }
                     }
                     tableHTML += "</tr>";
                 }
 
                 tableHTML += `</tbody></table></div>`;
-                tablesContainer.innerHTML += tableHTML;
+                tablesContainer.innerHTML = tableHTML;
 
             } catch (error) {
                 console.error("Napaka pri nalaganju podatkov:", error);
