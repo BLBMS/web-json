@@ -1,62 +1,67 @@
-[
-  {
-    "PHONE": "A50kk",
-    "HOST": "102.111",
-    "POOL": "farm",
-    "MHS": "9.018"
-  },
-  {
-    "PHONE": "A50l",
-    "HOST": "102.112",
-    "POOL": "farm",
-    "MHS": "4.063"
-  },
-  {
-    "PHONE": "A70a",
-    "HOST": "102.201",
-    "POOL": "farm",
-    "MHS": "5.041"
-  },
-  {
-    "PHONE": "A70b",
-    "HOST": "102.202",
-    "POOL": "farm",
-    "MHS": "5.008"
-  },
-  {
-    "PHONE": "A70c",
-    "HOST": "102.203",
-    "POOL": "farm",
-    "MHS": "5.063"
-  },
-  {
-    "PHONE": "A70d",
-    "HOST": "102.204",
-    "POOL": "farm",
-    "MHS": "5.048"
-  },
-  {
-    "PHONE": "A70e",
-    "HOST": "102.205",
-    "POOL": "farm",
-    "MHS": "5.052"
-  },
-  {
-    "PHONE": "A70g",
-    "HOST": "102.207",
-    "POOL": "farm",
-    "MHS": "5.066"
-  },
-  {
-    "PHONE": "A70h",
-    "HOST": "102.208",
-    "POOL": "farm",
-    "MHS": "5.070"
-  },
-  {
-    "PHONE": "HNRb",
-    "HOST": "100.241",
-    "POOL": "OFF-LINE",
-    "MHS": "0.000"
-  }
-]
+{
+  "DATE": [
+    "14:45:10 08.03.2025"
+  ],
+  "DATA": [
+    {
+      "PHONE": "A50k",
+      "HOST": "102.111",
+      "POOL": "farm",
+      "MHS": "9.018"
+    },
+    {
+      "PHONE": "A50l",
+      "HOST": "102.112",
+      "POOL": "farm",
+      "MHS": "4.063"
+    },
+    {
+      "PHONE": "A70a",
+      "HOST": "102.201",
+      "POOL": "farm",
+      "MHS": "5.041"
+    },
+    {
+      "PHONE": "A70b",
+      "HOST": "102.202",
+      "POOL": "farm",
+      "MHS": "5.008"
+    },
+    {
+      "PHONE": "A70c",
+      "HOST": "102.203",
+      "POOL": "farm",
+      "MHS": "5.063"
+    },
+    {
+      "PHONE": "A70d",
+      "HOST": "102.204",
+      "POOL": "farm",
+      "MHS": "5.048"
+    },
+    {
+      "PHONE": "A70e",
+      "HOST": "102.205",
+      "POOL": "farm",
+      "MHS": "5.052"
+    },
+    {
+      "PHONE": "A70g",
+      "HOST": "102.207",
+      "POOL": "farm",
+      "MHS": "5.066"
+    },
+    {
+      "PHONE": "A70h",
+      "HOST": "102.208",
+      "POOL": "farm",
+      "MHS": "5.070"
+    },
+    {
+      "PHONE": "HNRb",
+      "HOST": "100.241",
+      "POOL": "OFF-LINE",
+      "MHS": "0.000"
+    }
+  ]
+}
