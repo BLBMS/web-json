@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="sl">
-<!-- v.003 -->
+<!-- v.004 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>api-ccminer by blbMS v.003</title>
+    <title>api-ccminer by blbMS v.004</title>
     <style>
         body { font-family: monospace; background-color: black; color: white; }
         .container { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -33,14 +33,16 @@
             const url = "data.json";
             const response = await fetch(url);
             const data = await response.json();
-            
+
             document.getElementById("date-container").innerText = data.DATE[0];
-            
-            const columns = 5;
+
+            // Prilagodi število stolpcev glede na širino okna
+            const isMobile = window.innerWidth <= 768;
+            const columns = isMobile ? 1 : 5;
             const rowsPerColumn = Math.ceil(data.DATA.length / columns);
             let tablesContainer = document.getElementById("tables-container");
             tablesContainer.innerHTML = "";
-            
+
             let columnsData = Array.from({ length: columns }, () => []);
 
             data.DATA.forEach((item, index) => {
@@ -71,7 +73,7 @@
                     if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
                     if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
 
-                    tableHTML += `
+                    tableHTML += ` 
                         <tr>
                             <td>${item.PHONE}</td>
                             <td>${item.HOST}</td>
