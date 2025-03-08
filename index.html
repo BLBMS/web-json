@@ -18,6 +18,7 @@
         .blue { color: cyan; }
 
         /* Barve za POOL */
+        .pool-off-line { color: red; }
         .pool-farm { color: lime; }
         .pool-verus { color: orange; }
         .pool-luckpool { color: yellow; }
@@ -26,7 +27,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS</h2>
+    <h2>api-ccminer by blbMS 2025</h2>
     <div class="container" id="tables-container"></div>
 
     <script>
@@ -49,7 +50,7 @@
 
             columnsData.forEach(columnData => {
                 let tableHTML = `<div class="table-container"><table><thead>
-                    <tr><th>PHONE</th><th>HOST</th><th>POOL</th><th>MHS</th></tr></thead><tbody>`;
+                    <tr><th>DEVICE</th><th>IP</th><th>POOL</th><th>MHS</th></tr></thead><tbody>`;
 
                 columnData.forEach(item => {
                     let mhs = parseFloat(item.MHS);
@@ -57,9 +58,10 @@
                     let poolColorClass = "";
 
                     // Barve za MHS
-                    if (item.MHS === "OFF-LINE") {
-                        mhsColorClass = "red"; // "OFF-LINE" rdeče
-                    } else if (item.MHS.includes("_")) {
+                    //if (item.MHS === "OFF-LINE") {
+                    //    mhsColorClass = "red"; // "OFF-LINE" rdeče
+                    //} else 
+                    if (item.MHS.includes("_")) {
                         mhsColorClass = "black"; // Podčrtaji "_" ostanejo črni
                     } else if (mhs < 3) {
                         mhsColorClass = "red";
@@ -68,6 +70,7 @@
                     }
 
                     // Barve za POOL
+                    if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
                     if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
                     if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
                     if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
@@ -75,8 +78,8 @@
 
                     tableHTML += `
                         <tr>
-                            <td>${item.PHONE}</td>
-                            <td>${item.HOST}</td>
+                            <td>${item.DEVICE}</td>
+                            <td>${item.IP}</td>
                             <td class="${poolColorClass}">${item.POOL}</td>
                             <td class="${mhsColorClass}">${item.MHS}</td>
                         </tr>`;
