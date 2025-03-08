@@ -37,7 +37,7 @@
             const response = await fetch(url);
             const data = await response.json();
 
-            const columns = 4; // Število stolpcev
+            const columns = 5; // Število stolpcev
             const rowsPerColumn = Math.ceil(data.length / columns);
             let tablesContainer = document.getElementById("tables-container");
             tablesContainer.innerHTML = "";
