@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="sl">
-<!-- v.004 -->
+<!-- v.005 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>api-ccminer by blbMS v.004</title>
+    <title>api-ccminer</title>
     <style>
         body { font-family: monospace; background-color: black; color: white; }
         .container { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025</h2>
+    <h2>api-ccminer by blbMS 2025 v.005</h2>
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 
@@ -36,15 +36,15 @@
 
             document.getElementById("date-container").innerText = data.DATE[0];
 
-            // Prilagodi število stolpcev glede na širino okna
-            const isMobile = window.innerWidth <= 768;
-            const columns = isMobile ? 1 : 5;
+            // Prilagoditev števila stolpcev glede na širino okna
+            const columns = calculateColumns();
             const rowsPerColumn = Math.ceil(data.DATA.length / columns);
             let tablesContainer = document.getElementById("tables-container");
             tablesContainer.innerHTML = "";
 
             let columnsData = Array.from({ length: columns }, () => []);
 
+            // Razdelitev podatkov v stolpce
             data.DATA.forEach((item, index) => {
                 let columnIndex = index % columns;
                 columnsData[columnIndex].push(item);
@@ -73,7 +73,7 @@
                     if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
                     if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
 
-                    tableHTML += ` 
+                    tableHTML += `
                         <tr>
                             <td>${item.PHONE}</td>
                             <td>${item.HOST}</td>
@@ -85,6 +85,16 @@
                 tableHTML += `</tbody></table></div>`;
                 tablesContainer.innerHTML += tableHTML;
             });
+        }
+
+        // Funkcija za izračun števila stolpcev na podlagi širine okna
+        function calculateColumns() {
+            const screenWidth = window.innerWidth;
+            const columnWidth = 26; // Vsota širine vseh stolpcev (5 + 7 + 9 + 5)
+            const maxColumns = Math.floor(screenWidth / columnWidth);
+
+            // Če je zaslon preozek, uporabimo 1 stolpec
+            return maxColumns > 0 ? maxColumns : 1;
         }
 
         loadData();
