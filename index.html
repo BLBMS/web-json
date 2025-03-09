@@ -13,6 +13,9 @@
         .red { color: red; }
         .black { color: black; }
         .blue { color: cyan; }
+        .gray { color: gray; }
+		.goldenrod { color: goldenrod; }
+
 		/* Pool barve */
         .pool-off-line { color: red; }
         .pool-not-on-list { color: lightred; }
@@ -92,7 +95,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.015-04</h2>
+    <h2>api-ccminer by blbMS 2025 v.015-05</h2>
     <h3 id="date-container"></h3>
 
     <div class="container" id="tables-container"></div>
@@ -136,10 +139,11 @@
                     <tr><th>DEVICE</th>  <th>IP</th>  <th>POOL</th>  <th>MHS</th></tr></thead><tbody>`;
 
                 columnData.forEach(item => {
+                    let phoneColorClass = "goldenrod";
+                    let hostColorClass = "gray";
+                    let poolColorClass = "";
                     let mhs = parseFloat(item.MHS);
                     let mhsColorClass = "";
-                    let phoneColorClass = "goldenrod";
-                    let poolColorClass = "";
 
                     if (item.MHS.includes("0.000")) {
                         mhsColorClass = "black";
@@ -159,7 +163,7 @@
                     tableHTML += `
                         <tr>
                             <td class="${phoneColorClass}">${item.PHONE}</td>
-                            <td>${item.HOST}</td>
+                            <td class="${hostColorClass}">${item.HOST}</td>
                             <td class="${poolColorClass}">${item.POOL}</td>
                             <td class="${mhsColorClass}">${item.MHS}</td>
                         </tr>`;
@@ -181,7 +185,7 @@
             let tableHTML = `
                 <div class="table-container">
                     <table>
-                        <tr><th>Total Devices</th><td>${summ.all_dev}</td></tr>
+                        <tr><th>Total</th><td>${summ.all_dev}</td></tr>
                         <tr><th>Active</th><td>${summ.dev_active}</td></tr>
                         <tr><th>Inactive</th><td>${summ.dev_inactive}</td></tr>
                         <tr><th>Offline</th><td>${summ.dev_off}</td></tr>
@@ -189,7 +193,7 @@
                 </div>
                 <div class="table-container">
                     <table>
-                        <tr><th>Total MHS</th><td>${summ.mhs_all}</td></tr>
+                        <tr><th>MH/s</th><td>${summ.mhs_all}</td></tr>
                         <tr><th>VRSC/day</th><td>${summ.vrsc_day}</td></tr>
                         <tr><th>USDT/day</th><td>${summ.usdt_day}</td></tr>
                         <tr><th>Time</th><td>${summ.summ_time}</td></tr>
