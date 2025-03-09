@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>api-ccminer</title>
     <style>
         body { font-family: monospace; background-color: black; color: white; }
-        .container { display: flex; gap: 20px; justify-content: center; }
+        .container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .table-container { flex: 1; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; white-space: nowrap; }
         th { background-color: #222; }
         .red { color: red; }
-        .black { color: black; }
+        .black { color: white; }
         .blue { color: cyan; }
         .pool-off-line { color: red; }
         .pool-not-on-list { color: red; }
@@ -20,13 +20,21 @@
         .pool-verus { color: orange; }
         .pool-luckpool { color: yellow; }
         .pool-vipor { color: violet; }
+        .summ-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 20px auto; }
+        .sort-container { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 20px; }
+        .sort-table { width: 100%; text-align: center; }
+        .sort-header { font-weight: bold; background-color: #333; padding: 10px; }
+        .sort-data { padding: 10px; white-space: pre-wrap; }
     </style>
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.013</h2>
+    <h2>api-ccminer by blbMS 2025 v.014</h2>
     <h3 id="date-container"></h3>
+
     <div class="container" id="tables-container"></div>
+    <div class="summ-container" id="summ-container"></div>
+    <div class="sort-container" id="sort-container"></div>
 
     <script>
         async function loadData() {
@@ -36,13 +44,18 @@
 
             document.getElementById("date-container").innerText = data.DATE[0];
 
-            const numDevices = data.DATA.length;
+            createDeviceTable(data.DATA);
+            createSummTable(data.SUMM);
+            createSortTable(data.SORT);
+        }
+
+        function createDeviceTable(devices) {
+            const numDevices = devices.length;
             if (numDevices === 0) {
-                alert("Ni podatkov za prikaz.");
+                alert("No data available.");
                 return;
             }
 
-            // Izračunaj število stolpcev glede na širino ekrana
             const columns = calculateColumns(numDevices);
             const rowsPerColumn = Math.ceil(numDevices / columns);
             let tablesContainer = document.getElementById("tables-container");
@@ -50,13 +63,11 @@
 
             let columnsData = Array.from({ length: columns }, () => []);
 
-            // Pravilna vertikalna razporeditev
-            data.DATA.forEach((item, index) => {
+            devices.forEach((item, index) => {
                 let columnIndex = Math.floor(index / rowsPerColumn);
                 columnsData[columnIndex].push(item);
             });
 
-            // Ustvari stolpce in tabelo
             columnsData.forEach(columnData => {
                 let tableHTML = `<div class="table-container"><table><thead>
                     <tr><th>DEVICE</th>  <th>IP</th>  <th>POOL</th>  <th>MHS</th></tr></thead><tbody>`;
@@ -83,9 +94,9 @@
 
                     tableHTML += `
                         <tr>
-                            <td>${item.PHONE}</td>  
-                            <td>${item.HOST}</td>  
-                            <td class="${poolColorClass}">${item.POOL}</td>  
+                            <td>${item.PHONE}</td>
+                            <td>${item.HOST}</td>
+                            <td class="${poolColorClass}">${item.POOL}</td>
                             <td class="${mhsColorClass}">${item.MHS}</td>
                         </tr>`;
                 });
@@ -95,17 +106,70 @@
             });
         }
 
+        function createSummTable(summData) {
+            let summContainer = document.getElementById("summ-container");
+            summContainer.innerHTML = "";
+
+            if (!summData || summData.length === 0) return;
+
+            let summ = summData[0];
+
+            let tableHTML = `
+                <div class="table-container">
+                    <table>
+                        <tr><th>Total Devices</th><td>${summ.all_dev}</td></tr>
+                        <tr><th>Active</th><td>${summ.dev_active}</td></tr>
+                        <tr><th>Inactive</th><td>${summ.dev_inactive}</td></tr>
+                        <tr><th>Offline</th><td>${summ.dev_off}</td></tr>
+                    </table>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Total MHS</th><td>${summ.mhs_all}</td></tr>
+                        <tr><th>VRSC/day</th><td>${summ.vrsc_day}</td></tr>
+                        <tr><th>USDT/day</th><td>${summ.usdt_day}</td></tr>
+                        <tr><th>Time</th><td>${summ.summ_time}</td></tr>
+                        <tr><th>Iteration</th><td>${summ.iteration}</td></tr>
+                    </table>
+                </div>`;
+
+            summContainer.innerHTML = tableHTML;
+        }
+
+        function createSortTable(sortData) {
+            let sortContainer = document.getElementById("sort-container");
+            sortContainer.innerHTML = "";
+
+            if (!sortData || sortData.length === 0) return;
+
+            sortData.forEach(group => {
+                let category = Object.keys(group)[0];
+                let devices = group[category].join("  "); // Double space between devices
+
+                let tableHTML = `
+                    <div class="table-container">
+                        <table class="sort-table">
+                            <tr><th class="sort-header">${category}</th></tr>
+                            <tr><td class="sort-data">${devices}</td></tr>
+                        </table>
+                    </div>`;
+
+                sortContainer.innerHTML += tableHTML;
+            });
+        }
+
         function calculateColumns(numDevices) {
             const screenWidth = window.innerWidth;
-            const maxCharsPerRow = Math.floor(screenWidth / 10); // ~10px na znak
-            const maxColumns = Math.floor(maxCharsPerRow / 26); // Vsaka naprava ima ~26 znakov
+            const maxCharsPerRow = Math.floor(screenWidth / 10);
+            const maxColumns = Math.floor(maxCharsPerRow / 26);
 
             return Math.min(numDevices, maxColumns > 0 ? maxColumns : 1);
         }
 
         loadData();
-        setInterval(loadData, 60 * 1000);
+        setInterval(loadData, 2 * 60 * 1000); 
     </script>
 
 </body>
 </html>
+
