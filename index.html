@@ -13,7 +13,6 @@
         .red { color: red; }
         .black { color: black; }
         .blue { color: cyan; }
-        .lightyellow { color: lightyellow; }
 		/* Pool barve */
         .pool-off-line { color: red; }
         .pool-not-on-list { color: lightred; }
@@ -93,7 +92,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.015-01</h2>
+    <h2>api-ccminer by blbMS 2025 v.015-04</h2>
     <h3 id="date-container"></h3>
 
     <div class="container" id="tables-container"></div>
@@ -139,6 +138,7 @@
                 columnData.forEach(item => {
                     let mhs = parseFloat(item.MHS);
                     let mhsColorClass = "";
+                    let phoneColorClass = "goldenrod";
                     let poolColorClass = "";
 
                     if (item.MHS.includes("0.000")) {
@@ -158,7 +158,7 @@
 
                     tableHTML += `
                         <tr>
-                            <td class="${lightyellow}">${item.PHONE}</td>
+                            <td class="${phoneColorClass}">${item.PHONE}</td>
                             <td>${item.HOST}</td>
                             <td class="${poolColorClass}">${item.POOL}</td>
                             <td class="${mhsColorClass}">${item.MHS}</td>
@@ -209,17 +209,28 @@
             sortData.forEach(group => {
                 let category = Object.keys(group)[0];
                 let devices = group[category].join("  "); // Double space between devices
+				let poolColorClass = getPoolColorClass(category);
 
                 let tableHTML = `
                     <div class="table-container">
                         <table class="sort-table">
-                            <tr><th class="sort-header">${category}</th></tr>
+                            <tr><th class="poolColorClass">${category}</th></tr>
                             <tr><td class="sort-data">${devices}</td></tr>
                         </table>
                     </div>`;
 
                 sortContainer.innerHTML += tableHTML;
             });
+        }
+
+        function getPoolColorClass(pool) {
+            if (pool.toLowerCase().includes("off-line")) return "pool-off-line";
+            if (pool.toLowerCase().includes("not-on-list")) return "pool-not-on-list";
+            if (pool.toLowerCase().includes("farm")) return "pool-farm";
+            if (pool.toLowerCase().includes("verus")) return "pool-verus";
+            if (pool.toLowerCase().includes("luckpool")) return "pool-luckpool";
+            if (pool.toLowerCase().includes("vipor")) return "pool-vipor";
+            return "";
         }
 
         function calculateColumns(numDevices) {
