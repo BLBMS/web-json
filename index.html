@@ -6,11 +6,16 @@
     <title>api-ccminer</title>
     <style>
         body { font-family: monospace; background-color: black; color: white; }
+        h2 { color: cyan; } /* Naslov v cyan */
+        h3 { color: darkgoldenrod; } /* Datum in ura v temnejši rumeni */
+
         .container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .table-container { flex: 1; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; white-space: nowrap; }
-        th { background-color: #222; }
+        th { background-color: #222; height: 20px;}
+
+		/* Pool barve */
         .red { color: red; }
         .black { color: black; }
         .blue { color: cyan; }
@@ -20,11 +25,14 @@
         .pool-verus { color: orange; }
         .pool-luckpool { color: yellow; }
         .pool-vipor { color: violet; }
+
         .summ-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 20px auto; }
+
         .sort-container { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 20px; }
         .sort-table { width: 100%; text-align: center; }
         .sort-header { font-weight: bold; background-color: #333; padding: 10px; }
         .sort-data { padding: 10px; white-space: pre-wrap; }
+
     </style>
 </head>
 <body>
