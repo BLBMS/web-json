@@ -18,7 +18,7 @@
 
 		/* Pool barve */
         .pool-off-line { color: red; }
-        .pool-not-on-list { color: lightred; }
+        .pool-not-on-list { color: darkred; }
         .pool-farm { color: lime; }
         .pool-verus { color: orange; }
         .pool-luckpool { color: yellow; }
@@ -227,6 +227,21 @@
             });
         }
 
+		function getPoolColorClass(pool) {
+		    if (!pool) return "";
+		    pool = pool.toLowerCase(); // Normalizacija za lažje iskanje
+
+		    if (pool.includes("off-line")) return "pool-off-line";
+		    if (pool.includes("not-on-list")) return "pool-not-on-list";
+		    if (pool.includes("farm")) return "pool-farm";
+		    if (pool.includes("verus")) return "pool-verus";
+		    if (pool.includes("luckpool")) return "pool-luckpool";
+		    if (pool.includes("vipor")) return "pool-vipor";
+		    
+		    return ""; // Privzeto brez razreda
+		}
+
+/*
         function getPoolColorClass(pool) {
             if (pool.toLowerCase().includes("off-line")) return "pool-off-line";
             if (pool.toLowerCase().includes("not-on-list")) return "pool-not-on-list";
@@ -236,11 +251,12 @@
             if (pool.toLowerCase().includes("vipor")) return "pool-vipor";
             return "";
         }
+*/
 
         function calculateColumns(numDevices) {
             const screenWidth = window.innerWidth;
             const maxCharsPerRow = Math.floor(screenWidth / 10);
-            const maxColumns = Math.floor(maxCharsPerRow / 26);
+            const maxColumns = Math.floor(maxCharsPerRow / 27);
 
             return Math.min(numDevices, maxColumns > 0 ? maxColumns : 1);
         }
@@ -251,4 +267,3 @@
 
 </body>
 </html>
-
