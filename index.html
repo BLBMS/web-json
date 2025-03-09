@@ -57,7 +57,7 @@
 
 		.summ-table {
 		    flex: 1; /* Vsaka tabelica zasede enako prostora */
-		    min-width: 45%; /* Da sta približno polovici */
+		    min-width: 50%; /* Da sta približno polovici */
 		    box-sizing: border-box; /* Da padding ne vpliva na širino */
 		    border: 1px solid #ccc;
 		    padding: 10px;
@@ -67,13 +67,23 @@
         .sort-container {
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
 			width: 100%;
-			margin-top: 20px;
+			margin: 20px auto;
 		}
-        .sort-table { width: 100%; text-align: center; }
-        .sort-header { font-weight: bold; background-color: #333; padding: 10px; }
-        .sort-data { padding: 10px; white-space: pre-wrap; }
+        .sort-table {
+			width: 100%;
+			text-align: center;
+		}
+        .sort-header {
+			font-weight: bold;
+			background-color: #222;
+			padding: 10px;
+		}
+        .sort-data {
+			padding: 10px;
+			white-space: pre-wrap;
+		}
 
     </style>
 </head>
