@@ -9,10 +9,12 @@
         h2 { color: darkcyan; } /* Naslov */
         h3 { color: darkgoldenrod; } /* Datum in ura */
 
-		/* Pool barve */
+		/* Splošne barve */
         .red { color: red; }
         .black { color: black; }
         .blue { color: cyan; }
+        .lightyellow { color: lightyellow; }
+		/* Pool barve */
         .pool-off-line { color: red; }
         .pool-not-on-list { color: lightred; }
         .pool-farm { color: lime; }
@@ -51,6 +53,7 @@
 		    gap: 20px;
 		    justify-content: center;
 		    flex-wrap: wrap;
+			flex: 1;
 		    max-width: 600px;
 		    margin: 20px auto;
 		}
@@ -59,7 +62,7 @@
 		    flex: 1; /* Vsaka tabelica zasede enako prostora */
 		    min-width: 50%; /* Da sta približno polovici */
 		    box-sizing: border-box; /* Da padding ne vpliva na širino */
-		    border: 1px solid #ccc;
+		    border: 1px solid gray;
 		    padding: 10px;
 		    text-align: center;
 		}
@@ -73,15 +76,16 @@
 		}
         .sort-table {
 			width: 100%;
+			border: 1px solid gray;
 			text-align: center;
 		}
         .sort-header {
 			font-weight: bold;
 			background-color: #222;
-			padding: 10px;
+			padding: 5px;
 		}
         .sort-data {
-			padding: 10px;
+			padding: 5px;
 			white-space: pre-wrap;
 		}
 
@@ -89,7 +93,7 @@
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.015</h2>
+    <h2>api-ccminer by blbMS 2025 v.015-01</h2>
     <h3 id="date-container"></h3>
 
     <div class="container" id="tables-container"></div>
@@ -154,7 +158,7 @@
 
                     tableHTML += `
                         <tr>
-                            <td>${item.PHONE}</td>
+                            <td class="${lightyellow}">${item.PHONE}</td>
                             <td>${item.HOST}</td>
                             <td class="${poolColorClass}">${item.POOL}</td>
                             <td class="${mhsColorClass}">${item.MHS}</td>
