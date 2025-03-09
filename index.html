@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>api-ccminer</title>
+	<link rel="stylesheet" href="style.css"> <!-- Povezava do CSS datoteke -->
     <style>
         body { font-family: monospace; background-color: black; color: white; }
         h2 { color: darkcyan; } /* Naslov */
         h3 { color: darkgoldenrod; } /* Datum in ura */
 
 		/* Splošne barve */
+		:root {
+		    --background-color: #111;			/* Preddefiniraj barvo ozadja */
+			--text-header-color: gray;	/* Preddefiniraj barvo pisave */
+		}
         .red { color: red; }
         .black { color: black; }
         .blue { color: cyan; }
@@ -18,88 +23,151 @@
 
 		/* Pool barve */
         .pool-off-line { color: red; }
-        .pool-not-on-list { color: darkred; }
-        .pool-farm { color: lime; }
-        .pool-verus { color: orange; }
-        .pool-luckpool { color: yellow; }
-        .pool-vipor { color: violet; }
+        .pool-not-on-list { color: firebrick; }
+        .pool-verus { color: deepskyblue; }
+        .pool-farm { color: royalblue; }
+        .pool-vipor { color: powderblue; }
+        .pool-luckpool { color: teal; }
+        .pool-aihole { color: rebeccapurple; }
+        .pool-zeus { color: orchid; }
+        .pool-zerg { color: aquamarine; }
+        .pool-dmz { color: darkmagenta; }
+        .pool-paddy { color: springgreen; }
+        .pool-cedric { color: skyblue; }
+        .pool-cisco { color: cyan; }
+        .pool-watt { color: blueviolet; }
+        .pool-fast { color: darkorange; }
+        .pool-rg3d { color: lawngreen; }
 
+		/* ***** to je tabela z napravami ***** */
         .container {
-			display: flex;
-			gap: 20px;
-			justify-content: center;
-			flex-wrap: wrap;
-		}
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
         .table-container {
-			 flex: 1;
-		}
+             flex: 1;
+        }
 
         table {
-			border-collapse: collapse;
-			width: 100%;
-		}
+            border-collapse: collapse;
+            width: 100%;
+        }
         th, td {
-			border: 1px solid gray;
-			padding: 5px;
-			text-align: left;
-			white-space: nowrap;
-		}
+            border: 1px solid gray;
+            padding: 5px;
+            text-align: left;
+            white-space: nowrap;
+        }
         th {
-			background-color: #222;
-			height: 20px;
-		}
+            background-color: var(--background-color);
+            color: var(--text-header-color);
+            height: 20px;
+        }
 
-        /* .summ-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 20px auto; } */
-		.summ-container {
-		    display: flex;
-		    gap: 20px;
-		    justify-content: center;
-		    flex-wrap: wrap;
-			flex: 1;
-		    max-width: 600px;
-		    margin: 20px auto;
-		}
+		/* ***** to je tabela z IMENI vseh pools ***** */
+        .pools-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            margin: 20px auto;
+        }
+/*
 
-		.summ-table {
-		    flex: 1; /* Vsaka tabelica zasede enako prostora */
-		    min-width: 50%; /* Da sta približno polovici */
-		    box-sizing: border-box; /* Da padding ne vpliva na širino */
-		    border: 1px solid gray;
-		    padding: 10px;
-		    text-align: center;
-		}
+        .pools-table {
+            width: 100%;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid gray;
+            padding: 5px;
+            text-align: left;
+            white-space: nowrap;
 
-        .sort-container {
-			display: flex;
+            overflow-x: auto;
 			flex-direction: column;
-			gap: 20px;
-			width: 100%;
-			margin: 20px auto;
+            flex-direction: column;
+
+*/
+
+		/* ***** to je tabela s SUMMARY ***** */
+        .summ-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex: 1;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .summ-table {
+            flex: 1; /* Vsaka tabelica zasede enako prostora */
+            /* min-width: 50%;  Da sta približno polovici */
+            /* box-sizing: border-box;  Da padding ne vpliva na širino */
+            /* border: 1px solid gray; */
+            padding: 10px;
+            text-align: center;
+        }
+		.summ-table th, .summ-table td {
+		    width: 50%; /* Enaka širina stolpcev */
 		}
+
+		/* ***** to je tabela s SORT napravami ***** */
+        .sort-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            margin: 20px auto;
+        }
         .sort-table {
-			width: 100%;
-			border: 1px solid gray;
-			text-align: center;
-		}
+            width: 100%;
+            border: 1px solid gray;
+            text-align: center;
+        }
         .sort-header {
-			font-weight: bold;
-			background-color: #222;
-			padding: 5px;
-		}
+            font-weight: bold;
+            background-color: var(--background-color);
+            padding: 5px;
+        }
         .sort-data {
-			padding: 5px;
-			white-space: pre-wrap;
-		}
+            padding: 5px;
+            white-space: pre-wrap;
+        }
 
     </style>
 </head>
 <body>
 
-    <h2>api-ccminer by blbMS 2025 v.015-05</h2>
+    <h2>api-ccminer by blbMS 2025 v.016</h2>
     <h3 id="date-container"></h3>
 
     <div class="container" id="tables-container"></div>
-    <div class="summ-container" id="summ-container"></div>
+	<div class="pools-container" id="pools-container">
+	        <table class="pools-table">
+				<tr>
+	                <td class="pool-off-line">off-line</td>
+	                <td class="pool-not-on-list">not-on-list</td>
+	                <td class="pool-verus">verus</td>
+	                <td class="pool-farm">farm</td>
+	                <td class="pool-vipor">vipor</td>
+	                <td class="pool-luckpool">luckpool</td>
+	                <td class="pool-aihole">aihole</td>
+	                <td class="pool-zeus">zeus</td>
+	                <td class="pool-zerg">zerg</td>
+	                <td class="pool-dmz">dmz</td>
+	                <td class="pool-paddy">paddy</td>
+	                <td class="pool-cedric">cedric</td>
+	                <td class="pool-cisco">cisco</td>
+	                <td class="pool-watt">watt</td>
+	                <td class="pool-fast">fast</td>
+	                <td class="pool-rg3d">rg3d</td>
+	            </tr>
+	        </table>
+	</div>
+	<div class="summ-container" id="summ-container"></div>
     <div class="sort-container" id="sort-container"></div>
 
     <script>
@@ -183,15 +251,15 @@
             let summ = summData[0];
 
             let tableHTML = `
-                <div class="table-container">
+                <div class="summ-table">
                     <table>
                         <tr><th>Total</th><td>${summ.all_dev}</td></tr>
                         <tr><th>Active</th><td>${summ.dev_active}</td></tr>
                         <tr><th>Inactive</th><td>${summ.dev_inactive}</td></tr>
                         <tr><th>Offline</th><td>${summ.dev_off}</td></tr>
                     </table>
-                </div>
-                <div class="table-container">
+				</div>
+                <div class="summ-table">
                     <table>
                         <tr><th>MH/s</th><td>${summ.mhs_all}</td></tr>
                         <tr><th>VRSC/day</th><td>${summ.vrsc_day}</td></tr>
@@ -204,32 +272,35 @@
             summContainer.innerHTML = tableHTML;
         }
 
-        function createSortTable(sortData) {
-            let sortContainer = document.getElementById("sort-container");
-            sortContainer.innerHTML = "";
+		function createSortTable(sortData) {
+		    let sortContainer = document.getElementById("sort-container");
+		    sortContainer.innerHTML = "";
 
-            if (!sortData || sortData.length === 0) return;
+		    if (!sortData || sortData.length === 0) return;
 
-            sortData.forEach(group => {
-                let category = Object.keys(group)[0];
-                let devices = group[category].join("  "); // Double space between devices
-				let poolColorClass = getPoolColorClass(category);
+		    sortData.forEach(group => {
+		        let category = Object.keys(group)[0]; // Pridobi kategorijo (ime poola)
+		        let devices = group[category].join("  "); // Združi naprave z dvema presledkoma
 
-                let tableHTML = `
-                    <div class="table-container">
-                        <table class="sort-table">
-                            <tr><th class="poolColorClass">${category}</th></tr>
-                            <tr><td class="sort-data">${devices}</td></tr>
-                        </table>
-                    </div>`;
+		        let poolColorClass = getPoolColorClass(category); // Pridobi CSS razred
 
-                sortContainer.innerHTML += tableHTML;
-            });
-        }
+		        console.log(`Category: ${category}, Class: ${poolColorClass}`); // Debugging output
+
+		        let tableHTML = `
+		            <div class="table-container">
+		                <table class="sort-table">
+		                    <tr><th class="${poolColorClass}">${category}</th></tr>
+		                    <tr><td class="sort-data">${devices}</td></tr>
+		                </table>
+		            </div>`;
+
+		        sortContainer.innerHTML += tableHTML;
+		    });
+		}
 
 		function getPoolColorClass(pool) {
 		    if (!pool) return "";
-		    pool = pool.toLowerCase(); // Normalizacija za lažje iskanje
+		    pool = pool.toLowerCase().trim(); // Normalizacija stringa
 
 		    if (pool.includes("off-line")) return "pool-off-line";
 		    if (pool.includes("not-on-list")) return "pool-not-on-list";
@@ -238,20 +309,8 @@
 		    if (pool.includes("luckpool")) return "pool-luckpool";
 		    if (pool.includes("vipor")) return "pool-vipor";
 		    
-		    return ""; // Privzeto brez razreda
+		    return ""; // Če ni najdena nobena ustrezna vrednost, vrni prazen razred
 		}
-
-/*
-        function getPoolColorClass(pool) {
-            if (pool.toLowerCase().includes("off-line")) return "pool-off-line";
-            if (pool.toLowerCase().includes("not-on-list")) return "pool-not-on-list";
-            if (pool.toLowerCase().includes("farm")) return "pool-farm";
-            if (pool.toLowerCase().includes("verus")) return "pool-verus";
-            if (pool.toLowerCase().includes("luckpool")) return "pool-luckpool";
-            if (pool.toLowerCase().includes("vipor")) return "pool-vipor";
-            return "";
-        }
-*/
 
         function calculateColumns(numDevices) {
             const screenWidth = window.innerWidth;
