@@ -6,25 +6,30 @@
     <title>api-ccminer</title>
     <style>
         body { font-family: monospace; background-color: black; color: white; }
+        h2 { color: cyan; } /* Naslov v cyan */
+        h3 { color: darkgoldenrod; } /* Datum in ura v temnejši rumeni */
+        
         .container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .table-container { flex: 1; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid gray; padding: 5px; text-align: left; white-space: nowrap; }
-        th { background-color: #222; }
-        .red { color: red; }
-        .black { color: black; }
-        .blue { color: cyan; }
+        th { background-color: #222; height: 30px; } /* Glava tabel enake višine */
+        
+        /* Pool barve */
         .pool-off-line { color: red; }
         .pool-not-on-list { color: red; }
         .pool-farm { color: lime; }
         .pool-verus { color: orange; }
         .pool-luckpool { color: yellow; }
         .pool-vipor { color: violet; }
-        .summ-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 600px; margin: 20px auto; }
-        .sort-container { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 20px; }
-        .sort-table { width: 100%; text-align: center; }
-        .sort-header { font-weight: bold; background-color: #333; padding: 10px; }
-        .sort-data { padding: 10px; white-space: pre-wrap; }
+
+        /* Stilizacija sort-table */
+        .sort-table th { 
+            background-color: #222; /* Enaka barva kot pool */
+            height: 30px; /* Enaka višina kot v ostalih tabelah */
+            text-align: center;
+        }
+        .sort-data { padding: 10px; white-space: pre-wrap; text-align: center; }
     </style>
 </head>
 <body>
@@ -50,58 +55,32 @@
         }
 
         function createDeviceTable(devices) {
-            const numDevices = devices.length;
-            if (numDevices === 0) {
-                alert("No data available.");
-                return;
-            }
-
-            const columns = calculateColumns(numDevices);
-            const rowsPerColumn = Math.ceil(numDevices / columns);
-            let tablesContainer = document.getElementById("tables-container");
+            const tablesContainer = document.getElementById("tables-container");
             tablesContainer.innerHTML = "";
 
-            let columnsData = Array.from({ length: columns }, () => []);
-
-            devices.forEach((item, index) => {
-                let columnIndex = Math.floor(index / rowsPerColumn);
-                columnsData[columnIndex].push(item);
-            });
-
-            columnsData.forEach(columnData => {
-                let tableHTML = `<div class="table-container"><table><thead>
-                    <tr><th>DEVICE</th>  <th>IP</th>  <th>POOL</th>  <th>MHS</th></tr></thead><tbody>`;
-
-                columnData.forEach(item => {
-                    let mhs = parseFloat(item.MHS);
-                    let mhsColorClass = "";
-                    let poolColorClass = "";
-
-                    if (item.MHS.includes("0.000")) {
-                        mhsColorClass = "black";
-                    } else if (mhs < 3) {
-                        mhsColorClass = "red";
-                    } else if (mhs >= 5) {
-                        mhsColorClass = "blue";
-                    }
-
-                    if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
-                    if (item.POOL.toLowerCase().includes("not-on-list")) poolColorClass = "pool-not-on-list";
-                    if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
-                    if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
-                    if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
-                    if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
-
-                    tableHTML += `
-                        <tr>
-                            <td>${item.PHONE}</td>
-                            <td>${item.HOST}</td>
-                            <td class="${poolColorClass}">${item.POOL}</td>
-                            <td class="${mhsColorClass}">${item.MHS}</td>
-                        </tr>`;
-                });
-
-                tableHTML += `</tbody></table></div>`;
+            devices.forEach(item => {
+                let poolColorClass = getPoolColorClass(item.POOL);
+                let tableHTML = `
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DEVICE</th>
+                                    <th>IP</th>
+                                    <th>POOL</th>
+                                    <th>MHS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>${item.PHONE}</td>
+                                    <td>${item.HOST}</td>
+                                    <td class="${poolColorClass}">${item.POOL}</td>
+                                    <td>${item.MHS}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>`;
                 tablesContainer.innerHTML += tableHTML;
             });
         }
@@ -145,11 +124,12 @@
             sortData.forEach(group => {
                 let category = Object.keys(group)[0];
                 let devices = group[category].join("  "); // Double space between devices
+                let poolColorClass = getPoolColorClass(category);
 
                 let tableHTML = `
                     <div class="table-container">
                         <table class="sort-table">
-                            <tr><th class="sort-header">${category}</th></tr>
+                            <tr><th class="${poolColorClass}">${category}</th></tr>
                             <tr><td class="sort-data">${devices}</td></tr>
                         </table>
                     </div>`;
@@ -158,18 +138,19 @@
             });
         }
 
-        function calculateColumns(numDevices) {
-            const screenWidth = window.innerWidth;
-            const maxCharsPerRow = Math.floor(screenWidth / 10);
-            const maxColumns = Math.floor(maxCharsPerRow / 26);
-
-            return Math.min(numDevices, maxColumns > 0 ? maxColumns : 1);
+        function getPoolColorClass(pool) {
+            if (pool.toLowerCase().includes("off-line")) return "pool-off-line";
+            if (pool.toLowerCase().includes("not-on-list")) return "pool-not-on-list";
+            if (pool.toLowerCase().includes("farm")) return "pool-farm";
+            if (pool.toLowerCase().includes("verus")) return "pool-verus";
+            if (pool.toLowerCase().includes("luckpool")) return "pool-luckpool";
+            if (pool.toLowerCase().includes("vipor")) return "pool-vipor";
+            return "";
         }
 
         loadData();
-        setInterval(loadData, 1 * 60 * 1000); 
+        setInterval(loadData, 60 * 1000); 
     </script>
 
 </body>
 </html>
-
