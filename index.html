@@ -70,6 +70,8 @@
         .pools-container {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
+            flex: 1;
             width: 100%;
             margin: 20px auto;
         }
@@ -156,6 +158,8 @@
 	                <td class="pool-luckpool">luckpool</td>
 	                <td class="pool-aihole">aihole</td>
 	                <td class="pool-zeus">zeus</td>
+				</tr>
+				<tr>
 	                <td class="pool-zerg">zerg</td>
 	                <td class="pool-dmz">dmz</td>
 	                <td class="pool-paddy">paddy</td>
@@ -300,7 +304,7 @@
 
 		function getPoolColorClass(pool) {
 		    if (!pool) return "";
-		    pool = pool.toLowerCase().trim(); // Normalizacija stringa
+		    pool = pool.toLowerCase().trim();
 
 		    if (pool.includes("off-line")) return "pool-off-line";
 		    if (pool.includes("not-on-list")) return "pool-not-on-list";
