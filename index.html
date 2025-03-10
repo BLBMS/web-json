@@ -69,11 +69,19 @@
 		/* ***** to je tabela z IMENI vseh pools ***** */
         .pools-container {
             display: flex;
+			flex-direction: column;
             gap: 20px;
-            flex-wrap: wrap;
-            flex: 1;
             width: 100%;
             margin: 20px auto;
+        }
+        .pools-table {
+            width: 100%;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        .pools-data {
+            padding: 5px;
+            white-space: pre-wrap;
         }
 
 		/* ***** to je tabela s SUMMARY ***** */
@@ -129,8 +137,7 @@
 
     <div class="container" id="tables-container"></div>
 
-
-	<div id="all-pools-in-container"></div>
+	<div class="pools-container" id="all-pools-in-container"></div>
 
 
 <!--	<div class="pools-container">-->
@@ -245,7 +252,7 @@
 
 
 
-		const all-pools = [
+		const allPools = [
 		        { name: "off-line", class: "pool-off-line" },
 		        { name: "not-on-list", class: "pool-not-on-list" },
 		        { name: "verus", class: "pool-verus" },
@@ -265,29 +272,44 @@
 		    ];
 
 
-        function createAllPoolsTable(all-pools) {
-            let AllPoolsContainer = document.getElementById("all-pools-in-container");
-			let colorpools = group[all-pools].join("  "); // Združi z dvema presledkoma
-            AllPoolsContainer.innerHTML = "";
+	    function createAllPoolsTable(pools) {
+	        let allPoolsContainer = document.getElementById("all-pools-in-container");
 
-            let tableHTML = `
-                <div class="pools-table">
-                    <table>
-                        <tr><td>${colorpools}</td></tr>
-					</table>
-                </div>
+	        // Pretvorimo seznam v HTML z ustreznimi CSS razredi
+	        let colorPools = pools
+	            .map(pool => `<span class="${pool.class}">${pool.name}</span>`)
+	            .join("  "); // Ločimo z dvema presledkoma
 
-                sortContainer.innerHTML += tableHTML;
-            });
-        }
+	        let tableHTML = `
+	            <div class="pools-container">
+	                <table class="pools-table">
+	                    <tr><td>${colorPools}</td></tr>
+	                </table>
+	            </div>
+	        `;
 
-
-
-
-
+	        allPoolsContainer.innerHTML = tableHTML;
+	    }
 
 
+	    // Klic funkcije
+	    createAllPoolsTable(allPools);
 
+<!--        function createAllPoolsTable(all-pools) {-->
+<!--            let AllPoolsContainer = document.getElementById("all-pools-in-container");-->
+<!--			let colorpools = group[all-pools].join("  "); // Združi z dvema presledkoma-->
+<!--            AllPoolsContainer.innerHTML = "";-->
+<!---->
+<!--            let tableHTML = `-->
+<!--                <div class="pools-table">-->
+<!--                    <table>-->
+<!--                        <tr><td>${colorpools}</td></tr>-->
+<!--					</table>-->
+<!--                </div>-->
+<!---->
+<!--                sortContainer.innerHTML += tableHTML;-->
+<!--            });-->
+<!--        }-->
 
 
 
