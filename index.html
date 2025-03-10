@@ -130,7 +130,7 @@
     <div class="container" id="tables-container"></div>
 
 
-	<div id="all-pools-in"></div>
+	<div id="all-pools-in-container"></div>
 
 
 <!--	<div class="pools-container">-->
@@ -236,12 +236,16 @@
 
 
 
+<!--		    document.getElementById("all-pools-in").innerHTML = pools-->
+<!--		        .map(pool => `<span class="${pool.class}">${pool.name}</span>`)-->
+<!--		        .join(" | ");  // Dodamo ločilo med zapisi-->
 
 
 
 
 
-		const pools = [
+
+		const all-pools = [
 		        { name: "off-line", class: "pool-off-line" },
 		        { name: "not-on-list", class: "pool-not-on-list" },
 		        { name: "verus", class: "pool-verus" },
@@ -260,14 +264,22 @@
 		        { name: "rg3d", class: "pool-rg3d" }
 		    ];
 
-		    document.getElementById("all-pools-in").innerHTML = pools
-		        .map(pool => `<span class="${pool.class}">${pool.name}</span>`)
-		        .join(" | ");  // Dodamo ločilo med zapisi
 
+        function createAllPoolsTable(all-pools) {
+            let AllPoolsContainer = document.getElementById("all-pools-in-container");
+			let colorpools = group[all-pools].join("  "); // Združi z dvema presledkoma
+            AllPoolsContainer.innerHTML = "";
 
+            let tableHTML = `
+                <div class="pools-table">
+                    <table>
+                        <tr><td>${colorpools}</td></tr>
+					</table>
+                </div>
 
-
-
+                sortContainer.innerHTML += tableHTML;
+            });
+        }
 
 
 
