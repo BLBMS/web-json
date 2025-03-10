@@ -73,6 +73,7 @@
             gap: 20px;
             width: 100%;
             margin: 20px auto;
+		    table-layout: fixed;
         }
         .pools-table {
             width: 100%;
@@ -83,6 +84,11 @@
             padding: 5px;
             white-space: pre-wrap;
         }
+		td {
+			word-wrap: break-word;
+		    white-space: normal;
+			text-align: center;
+		}
 
 		/* ***** to je tabela s SUMMARY ***** */
         .summ-container {
@@ -134,37 +140,8 @@
 <body>
     <h2>api-ccminer by blbMS 2025 v.017</h2>
     <h3 id="date-container"></h3>
-
     <div class="container" id="tables-container"></div>
-
 	<div class="pools-container" id="all-pools-in-container"></div>
-
-
-<!--	<div class="pools-container">-->
-<!--	        <table class="pools-table">-->
-<!--				<tr>-->
-<!--	                <td class="pool-off-line">off-line</td>-->
-<!--	                <td class="pool-not-on-list">not-on-list</td>-->
-<!--	                <td class="pool-verus">verus</td>-->
-<!--	                <td class="pool-farm">farm</td>-->
-<!--	                <td class="pool-vipor">vipor</td>-->
-<!--	                <td class="pool-luckpool">luckpool</td>-->
-<!--	                <td class="pool-aihole">aihole</td>-->
-<!--	                <td class="pool-zeus">zeus</td>-->
-<!--				</tr>-->
-<!--				<tr>-->
-<!--	                <td class="pool-zerg">zerg</td>-->
-<!--	                <td class="pool-dmz">dmz</td>-->
-<!--	                <td class="pool-paddy">paddy</td>-->
-<!--	                <td class="pool-cedric">cedric</td>-->
-<!--	                <td class="pool-cisco">cisco</td>-->
-<!--	                <td class="pool-watt">watt</td>-->
-<!--	                <td class="pool-fast">fast</td>-->
-<!--	                <td class="pool-rg3d">rg3d</td>-->
-<!--	            </tr>-->
-<!--	        </table>-->
-<!--	</div>-->
-
 	<div class="summ-container" id="summ-container"></div>
     <div class="sort-container" id="sort-container"></div>
 
@@ -219,12 +196,22 @@
                         mhsColorClass = "blue";
                     }
 
-                    if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
-                    if (item.POOL.toLowerCase().includes("not-on-list")) poolColorClass = "pool-not-on-list";
-                    if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
-                    if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
-                    if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
-                    if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
+					if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
+					if (item.POOL.toLowerCase().includes("not-on-list")) poolColorClass = "pool-not-on-list";
+					if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
+					if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
+					if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
+					if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
+					if (item.POOL.toLowerCase().includes("aihole")) poolColorClass = "pool-aihole";
+					if (item.POOL.toLowerCase().includes("zeus")) poolColorClass = "pool-zeus";
+					if (item.POOL.toLowerCase().includes("zerg")) poolColorClass = "pool-zerg";
+					if (item.POOL.toLowerCase().includes("dmz")) poolColorClass = "pool-dmz";
+					if (item.POOL.toLowerCase().includes("paddy")) poolColorClass = "pool-paddy";
+					if (item.POOL.toLowerCase().includes("cedric")) poolColorClass = "pool-cedric";
+					if (item.POOL.toLowerCase().includes("cisco")) poolColorClass = "pool-cisco";
+					if (item.POOL.toLowerCase().includes("watt")) poolColorClass = "pool-watt";
+					if (item.POOL.toLowerCase().includes("fast")) poolColorClass = "pool-fast";
+					if (item.POOL.toLowerCase().includes("rg3d")) poolColorClass = "pool-rg3d";
 
                     tableHTML += `
                         <tr>
@@ -265,7 +252,7 @@
 	        // Pretvorimo seznam v HTML z ustreznimi CSS razredi
 	        let colorPools = pools
 	            .map(pool => `<span class="${pool.class}">${pool.name}</span>`)
-	            .join("  "); // Ločimo z dvema presledkoma
+	            .join(" | "); // Ločimo z dvema presledkoma
 
 	        let tableHTML = `
 	            <div class="pools-container">
@@ -341,12 +328,22 @@
 		    if (!pool) return "";
 		    pool = pool.toLowerCase().trim();
 
-		    if (pool.includes("off-line")) return "pool-off-line";
-		    if (pool.includes("not-on-list")) return "pool-not-on-list";
-		    if (pool.includes("farm")) return "pool-farm";
-		    if (pool.includes("verus")) return "pool-verus";
-		    if (pool.includes("luckpool")) return "pool-luckpool";
-		    if (pool.includes("vipor")) return "pool-vipor";
+			if (pool.includes("off-line")) return "pool-off-line";
+			if (pool.includes("not-on-list")) return "pool-not-on-list";
+			if (pool.includes("farm")) return "pool-farm";
+			if (pool.includes("verus")) return "pool-verus";
+			if (pool.includes("luckpool")) return "pool-luckpool";
+			if (pool.includes("vipor")) return "pool-vipor";
+			if (pool.includes("aihole")) return "pool-aihole";
+			if (pool.includes("zeus")) return "pool-zeus";
+			if (pool.includes("zerg")) return "pool-zerg";
+			if (pool.includes("dmz")) return "pool-dmz";
+			if (pool.includes("paddy")) return "pool-paddy";
+			if (pool.includes("cedric")) return "pool-cedric";
+			if (pool.includes("cisco")) return "pool-cisco";
+			if (pool.includes("watt")) return "pool-watt";
+			if (pool.includes("fast")) return "pool-fast";
+			if (pool.includes("rg3d")) return "pool-rg3d";
 		    
 		    return ""; // Če ni najdena nobena ustrezna vrednost, vrni prazen razred
 		}
