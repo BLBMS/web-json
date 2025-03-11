@@ -1,6 +1,6 @@
 {
   "DATE": [
-    "00:51:42 12.03.2025"
+    "00:52:06 12.03.2025"
   ],
   "DATA": [
     {
@@ -37,7 +37,7 @@
       "PHONE": "HNRc",
       "HOST": "192.168.100.242",
       "POOL": "farm",
-      "MHS": "5.009"
+      "MHS": "5.012"
     },
     {
       "PHONE": "A50j",
@@ -61,19 +61,19 @@
       "PHONE": "A70a",
       "HOST": "192.168.102.201",
       "POOL": "farm",
-      "MHS": "5.082"
+      "MHS": "5.084"
     },
     {
       "PHONE": "A70b",
       "HOST": "192.168.102.202",
       "POOL": "farm",
-      "MHS": "5.019"
+      "MHS": "5.020"
     },
     {
       "PHONE": "A70c",
       "HOST": "192.168.102.203",
       "POOL": "farm",
-      "MHS": "5.071"
+      "MHS": "5.072"
     },
     {
       "PHONE": "A70d",
@@ -85,31 +85,31 @@
       "PHONE": "A70e",
       "HOST": "192.168.102.205",
       "POOL": "farm",
-      "MHS": "5.070"
+      "MHS": "5.067"
     },
     {
       "PHONE": "A70g",
       "HOST": "192.168.102.207",
       "POOL": "farm",
-      "MHS": "5.087"
+      "MHS": "5.088"
     },
     {
       "PHONE": "A70h",
       "HOST": "192.168.102.208",
       "POOL": "farm",
-      "MHS": "5.050"
+      "MHS": "5.047"
     }
   ],
   "SUMM": [
     {
       "all_dev": 16,
-      "mhs_all": 66.635,
+      "mhs_all": 66.637,
       "dev_active": 15,
       "dev_inactive": 1,
       "dev_off": 2,
       "vrsc_day": 0.08,
       "usdt_day": 0.3,
-      "summ_time": "00:51:42",
+      "summ_time": "00:52:05",
       "iteration": 1
     }
   ],
