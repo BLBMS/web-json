@@ -1,25 +1,25 @@
 {
   "DATE": [
-    "22:59:59 11.03.2025"
+    "00:05:05 12.03.2025"
   ],
   "DATA": [
     {
       "PHONE": "S10a",
       "HOST": "192.168.100.150",
       "POOL": "farm",
-      "MHS": "4.638"
+      "MHS": "4.620"
     },
     {
       "PHONE": "S10f",
       "HOST": "192.168.100.155",
       "POOL": "farm",
-      "MHS": "4.503"
+      "MHS": "4.512"
     },
     {
       "PHONE": "S10g",
       "HOST": "192.168.100.156",
       "POOL": "farm",
-      "MHS": "4.587"
+      "MHS": "4.581"
     },
     {
       "PHONE": "HNRa",
@@ -37,7 +37,7 @@
       "PHONE": "HNRc",
       "HOST": "192.168.100.242",
       "POOL": "farm",
-      "MHS": "5.048"
+      "MHS": "5.049"
     },
     {
       "PHONE": "A50j",
@@ -49,67 +49,67 @@
       "PHONE": "A50k",
       "HOST": "192.168.102.111",
       "POOL": "farm",
-      "MHS": "4.028"
+      "MHS": "4.009"
     },
     {
       "PHONE": "A50l",
       "HOST": "192.168.102.112",
       "POOL": "farm",
-      "MHS": "4.079"
+      "MHS": "4.091"
     },
     {
       "PHONE": "A70a",
       "HOST": "192.168.102.201",
       "POOL": "farm",
-      "MHS": "5.059"
+      "MHS": "5.063"
     },
     {
       "PHONE": "A70b",
       "HOST": "192.168.102.202",
       "POOL": "farm",
-      "MHS": "5.015"
+      "MHS": "5.012"
     },
     {
       "PHONE": "A70c",
       "HOST": "192.168.102.203",
       "POOL": "farm",
-      "MHS": "5.077"
+      "MHS": "5.075"
     },
     {
       "PHONE": "A70d",
       "HOST": "192.168.102.204",
       "POOL": "farm",
-      "MHS": "5.061"
+      "MHS": "5.069"
     },
     {
       "PHONE": "A70e",
       "HOST": "192.168.102.205",
       "POOL": "farm",
-      "MHS": "5.083"
+      "MHS": "5.078"
     },
     {
       "PHONE": "A70g",
       "HOST": "192.168.102.207",
       "POOL": "farm",
-      "MHS": "5.076"
+      "MHS": "5.079"
     },
     {
       "PHONE": "A70h",
       "HOST": "192.168.102.208",
       "POOL": "farm",
-      "MHS": "5.072"
+      "MHS": "5.062"
     }
   ],
   "SUMM": [
     {
       "all_dev": 16,
-      "mhs_all": 66.542,
+      "mhs_all": 66.516,
       "dev_active": 15,
       "dev_inactive": 1,
       "dev_off": 2,
       "vrsc_day": 0.09,
       "usdt_day": 0.36,
-      "summ_time": "22:59:58",
+      "summ_time": "00:05:05",
       "iteration": 1
     }
   ],
