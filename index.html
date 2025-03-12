@@ -123,19 +123,20 @@
             border: 1px solid gray;
         }
         .sort-header { 
-            background-color: red;
-/*            background-color: var(--background-color);	*/
+            background-color: var(--background-color);
             padding: 5px;
+			text-align: left;
         }
         .sort-data {
             padding: 5px;
             white-space: pre-wrap;
+			text-align: left;
         }
 
     </style>
 </head>
 <body>
-    <h2>api-ccminer by blbMS 2025 v.017</h2>
+    <h2>api-ccminer by blbMS 2025 v.018</h2>
     <h3 id="date-container"></h3>
     <div class="container" id="tables-container"></div>
 	<div class="pools-container" id="all-pools-in-container"></div>
@@ -313,7 +314,7 @@
 		        let tableHTML = `
 		            <div class="sort-container">
 		                <table class="sort-table">
-		                    <tr><th class="${poolColorClass}">${category} (${nrDevs})</th></tr>
+		                    <tr><th class="sort-header ${poolColorClass}">${category} (${nrDevs})</th></tr>
 		                    <tr><td class="sort-data">${devices}</td></tr>
 		                </table>
 		            </div>`;
