@@ -57,7 +57,7 @@
         th, td {
             border: 1px solid gray;
             padding: 5px;
-            text-align: left;
+			text-align: center;
             white-space: nowrap;
         }
         th {
@@ -115,18 +115,20 @@
         .sort-container {
             display: flex;
             flex-direction: column;
-        /*    gap: 20px;*/
+            text-align: left;
             width: 100%;
-        /*    margin: 20px auto;*/
+            margin: 10px auto;
         }
         .sort-table {
             width: 100%;
             border: 1px solid gray;
             text-align: left;
         }
-	        .sort-header {
-            background-color: var(--background-color);
+        .sort-header {
+            background-color: red;
+/*            background-color: var(--background-color);	*/
             padding: 5px;
+			text-align: left;
         }
         .sort-data {
             padding: 5px;
