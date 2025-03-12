@@ -124,7 +124,7 @@
             border: 1px solid gray;
             text-align: center;
         }
-        .sort-header {
+/*        .sort-header {
             font-weight: bold;
             background-color: var(--background-color);
             padding: 5px;
@@ -134,7 +134,7 @@
             white-space: pre-wrap;
 			text-align: left;
         }
-
+*/
     </style>
 </head>
 <body>
@@ -314,7 +314,7 @@
 		        console.log(`Category: ${category}, Class: ${poolColorClass}`); // Debugging output
 
 		        let tableHTML = `
-		            <div class="table-container">
+		            <div class="sort-container">
 		                <table class="sort-table">
 		                    <tr><th class="${poolColorClass}">${category} (${nrDevs})</th></tr>
 		                    <tr><td class="sort-data">${devices}</td></tr>
