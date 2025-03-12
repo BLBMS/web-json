@@ -115,17 +115,16 @@
         .sort-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+        /*    gap: 20px;*/
             width: 100%;
-            margin: 20px auto;
+        /*    margin: 20px auto;*/
         }
         .sort-table {
             width: 100%;
             border: 1px solid gray;
-            text-align: center;
+            text-align: left;
         }
-/*        .sort-header {
-            font-weight: bold;
+	        .sort-header {
             background-color: var(--background-color);
             padding: 5px;
         }
@@ -134,7 +133,7 @@
             white-space: pre-wrap;
 			text-align: left;
         }
-*/
+
     </style>
 </head>
 <body>
@@ -306,7 +305,7 @@
 
 		    sortData.forEach(group => {
 		        let category = Object.keys(group)[0]; // Pridobi kategorijo (ime poola)
-		        let devices = group[category]["devices"];.join("  "); // Združi naprave z dvema presledkoma
+		        let devices = group[category]["devices"].join("  "); // Združi naprave z dvema presledkoma
 				let nrDevs = group[category]["nr-devs"]; // Pridobi število naprav
 
 		        let poolColorClass = getPoolColorClass(category); // Pridobi CSS razred
