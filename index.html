@@ -306,7 +306,8 @@
 
 		    sortData.forEach(group => {
 		        let category = Object.keys(group)[0]; // Pridobi kategorijo (ime poola)
-		        let devices = group[category].join("  "); // Združi naprave z dvema presledkoma
+		        let devices = group[category]["devices"];.join("  "); // Združi naprave z dvema presledkoma
+				let nrDevs = group[category]["nr-devs"]; // Pridobi število naprav
 
 		        let poolColorClass = getPoolColorClass(category); // Pridobi CSS razred
 
@@ -315,7 +316,7 @@
 		        let tableHTML = `
 		            <div class="table-container">
 		                <table class="sort-table">
-		                    <tr><th class="${poolColorClass}">${category}</th></tr>
+		                    <tr><th class="${poolColorClass}">${category} (${nrDevs})</th></tr>
 		                    <tr><td class="sort-data">${devices}</td></tr>
 		                </table>
 		            </div>`;
