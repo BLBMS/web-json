@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>api-ccminer</title>
 	<link rel="stylesheet" href="style.css"> <!-- Povezava do CSS datoteke -->
     <style>
@@ -40,79 +39,12 @@
         .pool-fast { color: darkorange; }
         .pool-rg3d { color: lawngreen; }
 
-
-		th, td {
-		    border: 1px solid gray;
-		    padding: 5px;
-		    text-align: center;
-		    white-space: nowrap;
-		}
-
-
-        /* ***** Stil za novo tabelo nr-devs ***** */
-		.nrdevs-container {
-			border-collapse: collapse;
-		    width: 100%;
-		    display: flex;
-		    gap: 20px;
-		    justify-content: center;
-		    flex-wrap: wrap;
-		    max-width: 400px;
-		    margin-bottom: 20px;
-		}
-
-		.nrdevs-pool-container {
-		    flex: 1;  /* Make each table inside nrdevs-container take equal space */
-		    min-width: 150px; /* Ensure the tables don’t shrink too small */
-		    margin: 10px;
-		}
-
-		.nrdevs-pool-table {
-		    width: 100%; /* Dodaj širino za vsako tabelo z napravami */
-		    border-collapse: collapse;
-		}
-
-		.nrdevs-pool-table th, .nrdevs-pool-table td {
-		    border: 1px solid gray;
-		    padding: 5px;
-		    text-align: center;
-		}
-
-
-		/* Fixing general width for the tables inside container, pools and summaries */
-		.table-container {
-		    flex: 1;
-		    width: 100%;
-		}
-
-		/* For small pools tables */
-		.nrdevs-pools-table {
-		    display: flex;
-		    flex-direction: column;
-		    align-items: center;
-		    border: 1px solid gray;
-		    width: 100%; /* Set to full width */
-		    margin: 5px;
-		}
-
-		.nrdevs-pools-header {
-		    background-color: var(--background-color);
-		    padding: 5px;
-		    text-align: center;
-		}
-
-		.nrdevs-pools-data {
-		    padding: 5px;
-		    text-align: center;
-		}
-
 		/* ***** to je tabela z napravami ***** */
         .container {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-			margin: 20px auto;
         }
         .table-container {
              flex: 1;
@@ -125,7 +57,7 @@
         th, td {
             border: 1px solid gray;
             padding: 5px;
-            text-align: center;
+            text-align: left;
             white-space: nowrap;
         }
         th {
@@ -171,7 +103,7 @@
             flex: 1; /* Vsaka tabelica zasede enako prostora */
             /* min-width: 50%;  Da sta približno polovici */
             /* box-sizing: border-box;  Da padding ne vpliva na širino */
-            border: 1px solid gray;
+            /* border: 1px solid gray; */
             padding: 0px;
             text-align: center;
         }
@@ -193,6 +125,7 @@
             text-align: center;
         }
         .sort-header {
+            font-weight: bold;
             background-color: var(--background-color);
             padding: 5px;
         }
@@ -205,9 +138,8 @@
     </style>
 </head>
 <body>
-    <h2>api-ccminer by blbMS 2025 v.018</h2>
+    <h2>api-ccminer by blbMS 2025 v.017</h2>
     <h3 id="date-container"></h3>
-	<div class="nrdevs-container" id="nrdevs-container"></div>
     <div class="container" id="tables-container"></div>
 	<div class="pools-container" id="all-pools-in-container"></div>
 	<div class="summ-container" id="summ-container"></div>
@@ -221,69 +153,10 @@
 
             document.getElementById("date-container").innerText = data.DATE[0];
 
-			createNrdevvsTable(data.SORT);
             createDeviceTable(data.DATA);
             createSummTable(data.SUMM);
             createSortTable(data.SORT);
         }
-
-
-		function createNrdevsTable(sortData) {
-		    let nrDevsContainer = document.getElementById("nrdevs-container");
-		    nrDevsContainer.innerHTML = ""; // Počistimo obstoječo vsebino
-
-		    if (!sortData || sortData.length === 0) return;
-
-		    sortData.forEach(group => {
-		        let category = Object.keys(group)[0]; // Pridobi kategorijo (ime pool)
-		        let nrDevs = group[category]["nr-devs"]; // Pridobi število naprav
-
-		        let poolColorClass = getPoolColorClass(category); // Pridobi CSS razred
-
-		        // Ustvarimo majhno tabelo za vsak pool
-		        let poolTableHTML = `
-		            <div class="nrdevs-pool-container">
-		                <table class="nrdevs-pool-table">
-		                    <tr><th class="${poolColorClass}">${category}</th></tr>
-		                    <tr><td class="sort-data">${nrDevs}</td></tr>
-		                </table>
-		            </div>`;
-		        nrDevsContainer.innerHTML += poolTableHTML;
-		    });
-		}
-
-<!---->
-<!--        function createNrdevsTable(sortData) {-->
-<!--            let nrDevsContainer = document.getElementById("nrdevices-container");-->
-<!--            nrDevsContainer.innerHTML = ""; // Počistimo obstoječo vsebino-->
-<!---->
-<!--            if (!sortData || sortData.length === 0) return;-->
-<!---->
-<!--            sortData.forEach(group => {-->
-<!--                let category = Object.keys(group)[0]; // Pridobi kategorijo (ime pool)-->
-<!--                let nrDevs = group[category]["nr-devs"]; // Pridobi število naprav-->
-<!---->
-<!--				let poolColorClass = getPoolColorClass(category); // Pridobi CSS razred-->
-<!---->
-<!--                // Ustvarimo majhno tabelo za vsak pool-->
-<!--                let poolTableHTML = `-->
-<!--                    <div class="nrdevs-pool-container">-->
-<!--                        <table class="nrdevs-pool-table">-->
-<!--                            <tr><th class="${poolColorClass}">${category}</th></tr>-->
-<!--                            <tr><td class="sort-data">${nrDevs}</td></tr>-->
-<!--                        </table>-->
-<!--                    </div>`;-->
-<!--                nrDevsContainer.innerHTML += poolTableHTML;-->
-<!--            });-->
-<!--        }-->
-
-
-<!--                    <div class="nrdevs-pools-table">-->
-<!--                        <div class="nrdevs-pools-header">-->
-<!--							<tr><th class="${poolColorClass}">${category}</th></tr>-->
-<!--						</div>-->
-<!--                        <div class="nrdevs-pools-data">${nrDevs}</div>-->
-<!--                    </div>`;-->
 
         function createDeviceTable(devices) {
             const numDevices = devices.length;
@@ -433,15 +306,16 @@
 
 		    sortData.forEach(group => {
 		        let category = Object.keys(group)[0]; // Pridobi kategorijo (ime poola)
-		        let devices = group[category].devices.join("  "); // Združi naprave z dvema presledkoma
-		        let nrDevs = group[category]["nr-devs"]; // Pridobi število naprav
+		        let devices = group[category].join("  "); // Združi naprave z dvema presledkoma
 
 		        let poolColorClass = getPoolColorClass(category); // Pridobi CSS razred
+
+		        console.log(`Category: ${category}, Class: ${poolColorClass}`); // Debugging output
 
 		        let tableHTML = `
 		            <div class="table-container">
 		                <table class="sort-table">
-		                    <tr><th class="${poolColorClass}">${category} (${nrDevs})</th></tr>
+		                    <tr><th class="${poolColorClass}">${category}</th></tr>
 		                    <tr><td class="sort-data">${devices}</td></tr>
 		                </table>
 		            </div>`;
@@ -488,4 +362,3 @@
 
 </body>
 </html>
-
