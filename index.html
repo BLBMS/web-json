@@ -157,6 +157,7 @@
             createSortTable(data.SORT);
         }
 
+<!--	PREBERE ŠTEVILO ZNAKOV-->
 		function getMaxColumnWidths(devices) {
 		    let maxPhone = 0, maxHost = 0, maxPool = 0;
 
@@ -175,6 +176,7 @@
 		    };
 		}
 
+<!--	DOLOČI ŠTEVILO STOLPCEV-->
 		function calculateColumns(devices) {
 		    const screenWidth = window.innerWidth;
 		    const colWidths = getMaxColumnWidths(devices);
@@ -186,6 +188,7 @@
 		    return Math.max(1, Math.floor(screenWidth / (tableWidth * 10))); // Faktor 10 zaradi enot širine
 		}
 
+<!--	TABELA DEVICES-->
 		function createDeviceTable(devices) {
 		    const numDevices = devices.length;
 		    if (numDevices === 0) {
@@ -238,30 +241,31 @@
 		    });
 		}
 
-<!--		function createAllPoolsTable(pools) {-->
-<!--		    let allPoolsContainer = document.getElementById("all-pools-in-container");-->
-<!---->
-<!--		    let colorPools = pools-->
-<!--		        .map(pool => {-->
-<!--		            let poolClass = getPoolColorClass(pool.name);-->
-<!--		            return `<span class="${poolClass}">${pool.name}</span>`;-->
-<!--		        })-->
-<!--		        .join(" | ");-->
-<!---->
-<!--		    let tableHTML = `-->
-<!--		        <div class="pools-container">-->
-<!--		            <table class="pools-table">-->
-<!--		                <tr><td>${colorPools}</td></tr>-->
-<!--		            </table>-->
-<!--		        </div>-->
-<!--		    `;-->
-<!---->
-<!--		    allPoolsContainer.innerHTML = tableHTML;-->
-<!--		}-->
-<!---->
-<!--		// Klic funkcije-->
-<!--		createAllPoolsTable(allPools);-->
-<!---->
+<!--	IZPIS VSEH POOL'S-->
+		function createAllPoolsTable(pools) {
+		    let allPoolsContainer = document.getElementById("all-pools-in-container");
+
+		    let colorPools = pools
+		        .map(pool => {
+		            let poolClass = getPoolColorClass(pool.name);
+		            return `<span class="${poolClass}">${pool.name}</span>`;
+		        })
+		        .join(" | ");
+
+		    let tableHTML = `
+		        <div class="pools-container">
+		            <table class="pools-table">
+		                <tr><td>colorPools</td></tr>
+		            </table>
+		        </div>
+		    `;
+
+		    allPoolsContainer.innerHTML = tableHTML;
+		}
+
+		// Klic funkcije
+		createAllPoolsTable(allPools);
+
 
 <!---->
 <!--		const allPools = [-->
@@ -305,6 +309,7 @@
 <!--	    // Klic funkcije-->
 <!--	    createAllPoolsTable(allPools);-->
 
+<!--	TABELA SUMMARY-->
         function createSummTable(summData) {
             let summContainer = document.getElementById("summ-container");
             summContainer.innerHTML = "";
@@ -335,6 +340,7 @@
             summContainer.innerHTML = tableHTML;
         }
 
+<!--	TABELA SORT DEVICES-->
 		function createSortTable(sortData) {
 		    let sortContainer = document.getElementById("sort-container");
 		    sortContainer.innerHTML = "";
@@ -362,6 +368,7 @@
 		    });
 		}
 
+<!--	DOLOČITEV BARV ZA VSAK POOL-->
 		function getPoolColorClass(pool) {
 		    if (!pool) return "";
 		    pool = pool.toLowerCase().trim();
