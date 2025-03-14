@@ -157,74 +157,159 @@
             createSortTable(data.SORT);
         }
 
-        function createDeviceTable(devices) {
-            const numDevices = devices.length;
-            if (numDevices === 0) {
-                alert("No data available.");
-                return;
-            }
+		function getMaxColumnWidths(devices) {
+		    let maxPhone = 0, maxHost = 0, maxPool = 0;
 
-            const columns = calculateColumns(numDevices);
-            const rowsPerColumn = Math.ceil(numDevices / columns);
-            let tablesContainer = document.getElementById("tables-container");
-            tablesContainer.innerHTML = "";
+		    devices.forEach(item => {
+		        maxPhone = Math.max(maxPhone, item.PHONE.length);
+		        maxHost = Math.max(maxHost, item.HOST.length);
+		        maxPool = Math.max(maxPool, item.POOL.length);
+		    });
 
-            let columnsData = Array.from({ length: columns }, () => []);
+		    // Dodamo nekaj dodatnih znakov za okvir tabele in presledke
+		    return {
+		        phone: maxPhone + 0, 
+		        host: maxHost + 0,
+		        pool: maxPool + 0,
+		        mhs: 5 + 0 // Vedno 5 znakov
+		    };
+		}
 
-            devices.forEach((item, index) => {
-                let columnIndex = Math.floor(index / rowsPerColumn);
-                columnsData[columnIndex].push(item);
-            });
+		function calculateColumns(devices) {
+		    const screenWidth = window.innerWidth;
+		    const colWidths = getMaxColumnWidths(devices);
 
-            columnsData.forEach(columnData => {
-                let tableHTML = `<div class="table-container"><table><thead>
-                    <tr><th>DEVICE</th>  <th>IP</th>  <th>POOL</th>  <th>MHS</th></tr></thead><tbody>`;
+		    // Skupna širina ene tabele (PHONE + HOST + POOL + MHS + obrobe)
+		    const tableWidth = colWidths.phone + colWidths.host + colWidths.pool + colWidths.mhs;
 
-                columnData.forEach(item => {
-                    let phoneColorClass = "goldenrod";
-                    let hostColorClass = "gray";
-                    let poolColorClass = "";
-                    let mhs = parseFloat(item.MHS);
-                    let mhsColorClass = "";
+		    // Število tabel na zaslon
+		    return Math.max(1, Math.floor(screenWidth / (tableWidth * 10))); // Faktor 10 zaradi enot širine
+		}
 
-                    if (item.MHS.includes("0.000")) {
-                        mhsColorClass = "black";
-                    } else if (mhs < 3) {
-                        mhsColorClass = "red";
-                    } else if (mhs >= 5) {
-                        mhsColorClass = "blue";
-                    }
 
-					if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";
-					if (item.POOL.toLowerCase().includes("not-on-list")) poolColorClass = "pool-not-on-list";
-					if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";
-					if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";
-					if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";
-					if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";
-					if (item.POOL.toLowerCase().includes("aihole")) poolColorClass = "pool-aihole";
-					if (item.POOL.toLowerCase().includes("zeus")) poolColorClass = "pool-zeus";
-					if (item.POOL.toLowerCase().includes("zerg")) poolColorClass = "pool-zerg";
-					if (item.POOL.toLowerCase().includes("dmz")) poolColorClass = "pool-dmz";
-					if (item.POOL.toLowerCase().includes("paddy")) poolColorClass = "pool-paddy";
-					if (item.POOL.toLowerCase().includes("cedric")) poolColorClass = "pool-cedric";
-					if (item.POOL.toLowerCase().includes("cisco")) poolColorClass = "pool-cisco";
-					if (item.POOL.toLowerCase().includes("watt")) poolColorClass = "pool-watt";
-					if (item.POOL.toLowerCase().includes("fast")) poolColorClass = "pool-fast";
-					if (item.POOL.toLowerCase().includes("rg3d")) poolColorClass = "pool-rg3d";
+<!--		NOVA FUNKCIJA-->
+		function createDeviceTable(devices) {
+		    const numDevices = devices.length;
+		    if (numDevices === 0) {
+		        alert("No data available.");
+		        return;
+		    }
 
-                    tableHTML += `
-                        <tr>
-                            <td class="${phoneColorClass}">${item.PHONE}</td>
-                            <td class="${hostColorClass}">${item.HOST}</td>
-                            <td class="${poolColorClass}">${item.POOL}</td>
-                            <td class="${mhsColorClass}">${item.MHS}</td>
-                        </tr>`;
-                });
+		    const columns = calculateColumns(devices);
+		    const rowsPerColumn = Math.ceil(numDevices / columns);
+		    let tablesContainer = document.getElementById("tables-container");
+		    tablesContainer.innerHTML = "";
 
-                tableHTML += `</tbody></table></div>`;
-                tablesContainer.innerHTML += tableHTML;
-            });
-        }
+		    let columnsData = Array.from({ length: columns }, () => []);
+
+		    devices.forEach((item, index) => {
+		        let columnIndex = Math.floor(index / rowsPerColumn);
+		        columnsData[columnIndex].push(item);
+		    });
+
+		    columnsData.forEach(columnData => {
+		        let tableHTML = `<div class="table-container"><table><thead>
+		            <tr><th>DEVICE</th>  <th>IP</th>  <th>POOL</th>  <th>MHS</th></tr></thead><tbody>`;
+
+		        columnData.forEach(item => {
+		            let phoneColorClass = "goldenrod";
+		            let hostColorClass = "gray";
+		            let poolColorClass = getPoolColorClass(item.POOL);
+		            let mhs = parseFloat(item.MHS);
+		            let mhsColorClass = "";
+
+		            if (item.MHS.includes("0.000")) {
+		                mhsColorClass = "black";
+		            } else if (mhs < 3) {
+		                mhsColorClass = "red";
+		            } else if (mhs >= 5) {
+		                mhsColorClass = "blue";
+		            }
+
+		            tableHTML += `
+		                <tr>
+		                    <td class="${phoneColorClass}">${item.PHONE.padEnd(15, " ")}</td>
+		                    <td class="${hostColorClass}">${item.HOST.padEnd(15, " ")}</td>
+		                    <td class="${poolColorClass}">${item.POOL.padEnd(15, " ")}</td>
+		                    <td class="${mhsColorClass}">${item.MHS.padEnd(5, " ")}</td>
+		                </tr>`;
+		        });
+
+		        tableHTML += `</tbody></table></div>`;
+		        tablesContainer.innerHTML += tableHTML;
+		    });
+		}
+
+
+
+<!--        function createDeviceTable(devices) {-->
+<!--            const numDevices = devices.length;-->
+<!--            if (numDevices === 0) {-->
+<!--                alert("No data available.");-->
+<!--                return;-->
+<!--            }-->
+<!---->
+<!--            const columns = calculateColumns(numDevices);-->
+<!--            const rowsPerColumn = Math.ceil(numDevices / columns);-->
+<!--            let tablesContainer = document.getElementById("tables-container");-->
+<!--            tablesContainer.innerHTML = "";-->
+<!---->
+<!--            let columnsData = Array.from({ length: columns }, () => []);-->
+<!---->
+<!--            devices.forEach((item, index) => {-->
+<!--                let columnIndex = Math.floor(index / rowsPerColumn);-->
+<!--                columnsData[columnIndex].push(item);-->
+<!--            });-->
+<!---->
+<!--            columnsData.forEach(columnData => {-->
+<!--                let tableHTML = `<div class="table-container"><table><thead>-->
+<!--                    <tr><th>DEVICE</th>  <th>IP</th>  <th>POOL</th>  <th>MHS</th></tr></thead><tbody>`;-->
+<!---->
+<!--                columnData.forEach(item => {-->
+<!--                    let phoneColorClass = "goldenrod";-->
+<!--                    let hostColorClass = "gray";-->
+<!--                    let poolColorClass = "";-->
+<!--                    let mhs = parseFloat(item.MHS);-->
+<!--                    let mhsColorClass = "";-->
+<!---->
+<!--                    if (item.MHS.includes("0.000")) {-->
+<!--                        mhsColorClass = "black";-->
+<!--                    } else if (mhs < 3) {-->
+<!--                        mhsColorClass = "red";-->
+<!--                    } else if (mhs >= 5) {-->
+<!--                        mhsColorClass = "blue";-->
+<!--                    }-->
+<!---->
+<!--					if (item.POOL.toLowerCase().includes("off-line")) poolColorClass = "pool-off-line";-->
+<!--					if (item.POOL.toLowerCase().includes("not-on-list")) poolColorClass = "pool-not-on-list";-->
+<!--					if (item.POOL.toLowerCase().includes("verus")) poolColorClass = "pool-verus";-->
+<!--					if (item.POOL.toLowerCase().includes("farm")) poolColorClass = "pool-farm";-->
+<!--					if (item.POOL.toLowerCase().includes("vipor")) poolColorClass = "pool-vipor";-->
+<!--					if (item.POOL.toLowerCase().includes("luckpool")) poolColorClass = "pool-luckpool";-->
+<!--					if (item.POOL.toLowerCase().includes("aihole")) poolColorClass = "pool-aihole";-->
+<!--					if (item.POOL.toLowerCase().includes("zeus")) poolColorClass = "pool-zeus";-->
+<!--					if (item.POOL.toLowerCase().includes("zerg")) poolColorClass = "pool-zerg";-->
+<!--					if (item.POOL.toLowerCase().includes("dmz")) poolColorClass = "pool-dmz";-->
+<!--					if (item.POOL.toLowerCase().includes("paddy")) poolColorClass = "pool-paddy";-->
+<!--					if (item.POOL.toLowerCase().includes("cedric")) poolColorClass = "pool-cedric";-->
+<!--					if (item.POOL.toLowerCase().includes("cisco")) poolColorClass = "pool-cisco";-->
+<!--					if (item.POOL.toLowerCase().includes("watt")) poolColorClass = "pool-watt";-->
+<!--					if (item.POOL.toLowerCase().includes("fast")) poolColorClass = "pool-fast";-->
+<!--					if (item.POOL.toLowerCase().includes("rg3d")) poolColorClass = "pool-rg3d";-->
+<!---->
+<!--                    tableHTML += `-->
+<!--                        <tr>-->
+<!--                            <td class="${phoneColorClass}">${item.PHONE}</td>-->
+<!--                            <td class="${hostColorClass}">${item.HOST}</td>-->
+<!--                            <td class="${poolColorClass}">${item.POOL}</td>-->
+<!--                            <td class="${mhsColorClass}">${item.MHS}</td>-->
+<!--                        </tr>`;-->
+<!--                });-->
+<!---->
+<!--                tableHTML += `</tbody></table></div>`;-->
+<!--                tablesContainer.innerHTML += tableHTML;-->
+<!--            });-->
+<!--        }-->
 
 		const allPools = [
 		        { name: "off-line", class: "pool-off-line" },
@@ -348,13 +433,13 @@
 		    return ""; // Če ni najdena nobena ustrezna vrednost, vrni prazen razred
 		}
 
-        function calculateColumns(numDevices) {
-            const screenWidth = window.innerWidth;
-            const maxCharsPerRow = Math.floor(screenWidth / 10);
-            const maxColumns = Math.floor(maxCharsPerRow / 27);
-
-            return Math.min(numDevices, maxColumns > 0 ? maxColumns : 1);
-        }
+<!--        function calculateColumns(numDevices) {-->
+<!--            const screenWidth = window.innerWidth;-->
+<!--            const maxCharsPerRow = Math.floor(screenWidth / 10);-->
+<!--            const maxColumns = Math.floor(maxCharsPerRow / 27);-->
+<!---->
+<!--            return Math.min(numDevices, maxColumns > 0 ? maxColumns : 1);-->
+<!--        }-->
 
         loadData();
         setInterval(loadData, 60 * 1000); 
