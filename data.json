@@ -1,55 +1,55 @@
 {
   "DATE": [
-    "17:24:58 25.03.2025"
+    "17:41:25 25.03.2025"
   ],
   "DATA": [
     {
       "PHONE": "S9a",
       "HOST": "100.110",
       "POOL": "farm",
-      "MHS": "3.799"
+      "MHS": "3.825"
     },
     {
       "PHONE": "S9b",
       "HOST": "100.111",
       "POOL": "farm",
-      "MHS": "3.782"
+      "MHS": "3.787"
     },
     {
       "PHONE": "S9c",
       "HOST": "100.112",
       "POOL": "farm",
-      "MHS": "3.681"
+      "MHS": "3.708"
     },
     {
       "PHONE": "S9d",
       "HOST": "100.113",
       "POOL": "farm",
-      "MHS": "3.777"
+      "MHS": "3.796"
     },
     {
       "PHONE": "S9e",
       "HOST": "100.114",
       "POOL": "farm",
-      "MHS": "4.258"
+      "MHS": "4.257"
     },
     {
       "PHONE": "S9f",
       "HOST": "100.115",
-      "POOL": "OFF-LINE",
-      "MHS": "0.000"
+      "POOL": "farm",
+      "MHS": "3.721"
     },
     {
       "PHONE": "S9g",
       "HOST": "100.116",
       "POOL": "farm",
-      "MHS": "3.700"
+      "MHS": "3.681"
     },
     {
       "PHONE": "S9h",
       "HOST": "100.117",
       "POOL": "farm",
-      "MHS": "3.709"
+      "MHS": "3.719"
     },
     {
       "PHONE": "S9i",
@@ -61,19 +61,19 @@
       "PHONE": "S9j",
       "HOST": "100.119",
       "POOL": "farm",
-      "MHS": "3.732"
+      "MHS": "3.742"
     },
     {
       "PHONE": "S9k",
       "HOST": "100.120",
       "POOL": "farm",
-      "MHS": "3.785"
+      "MHS": "3.729"
     },
     {
       "PHONE": "S9l",
       "HOST": "100.121",
       "POOL": "farm",
-      "MHS": "3.606"
+      "MHS": "3.622"
     },
     {
       "PHONE": "S9m",
@@ -85,55 +85,55 @@
       "PHONE": "S9n",
       "HOST": "100.123",
       "POOL": "farm",
-      "MHS": "4.722"
+      "MHS": "4.747"
     },
     {
       "PHONE": "S9o",
       "HOST": "100.124",
       "POOL": "farm",
-      "MHS": "3.782"
+      "MHS": "3.756"
     },
     {
       "PHONE": "S9p",
       "HOST": "100.125",
       "POOL": "farm",
-      "MHS": "3.843"
+      "MHS": "3.848"
     },
     {
       "PHONE": "S9q",
       "HOST": "100.126",
       "POOL": "farm",
-      "MHS": "3.733"
+      "MHS": "3.721"
     },
     {
       "PHONE": "S9r",
       "HOST": "100.127",
-      "POOL": "OFF-LINE",
-      "MHS": "0.000"
+      "POOL": "farm",
+      "MHS": "3.700"
     },
     {
       "PHONE": "S9s",
       "HOST": "100.128",
       "POOL": "farm",
-      "MHS": "3.761"
+      "MHS": "3.778"
     },
     {
       "PHONE": "S9t",
       "HOST": "100.129",
       "POOL": "farm",
-      "MHS": "3.808"
+      "MHS": "3.797"
     },
     {
       "PHONE": "S9u",
       "HOST": "100.209",
       "POOL": "farm",
-      "MHS": "3.742"
+      "MHS": "3.721"
     },
     {
       "PHONE": "J7b",
       "HOST": "100.131",
       "POOL": "farm",
-      "MHS": "3.822"
+      "MHS": "3.825"
     },
     {
       "PHONE": "J7c",
@@ -145,55 +145,55 @@
       "PHONE": "J7d",
       "HOST": "100.133",
       "POOL": "farm",
-      "MHS": "3.830"
+      "MHS": "3.831"
     },
     {
       "PHONE": "J7e",
       "HOST": "100.134",
       "POOL": "farm",
-      "MHS": "3.826"
+      "MHS": "3.828"
     },
     {
       "PHONE": "J7f",
       "HOST": "100.135",
       "POOL": "farm",
-      "MHS": "3.822"
+      "MHS": "3.826"
     },
     {
       "PHONE": "J7g",
       "HOST": "100.136",
       "POOL": "farm",
-      "MHS": "3.112"
+      "MHS": "3.119"
     },
     {
       "PHONE": "A5b",
       "HOST": "100.138",
       "POOL": "farm",
-      "MHS": "3.021"
+      "MHS": "3.019"
     },
     {
       "PHONE": "A5c",
       "HOST": "100.139",
       "POOL": "farm",
-      "MHS": "3.360"
+      "MHS": "3.369"
     },
     {
       "PHONE": "A5d",
       "HOST": "100.140",
       "POOL": "farm",
-      "MHS": "3.240"
+      "MHS": "3.237"
     },
     {
       "PHONE": "A8a",
       "HOST": "100.142",
       "POOL": "farm",
-      "MHS": "3.703"
+      "MHS": "3.702"
     },
     {
       "PHONE": "A8b",
       "HOST": "100.143",
       "POOL": "farm",
-      "MHS": "4.060"
+      "MHS": "4.066"
     },
     {
       "PHONE": "A8c",
@@ -205,61 +205,61 @@
       "PHONE": "A5e",
       "HOST": "100.147",
       "POOL": "farm",
-      "MHS": "3.474"
+      "MHS": "3.452"
     },
     {
       "PHONE": "S7a",
       "HOST": "100.149",
       "POOL": "farm",
-      "MHS": "4.038"
+      "MHS": "4.007"
     },
     {
       "PHONE": "S10a",
       "HOST": "100.150",
       "POOL": "farm",
-      "MHS": "4.546"
+      "MHS": "4.557"
     },
     {
       "PHONE": "S10b",
       "HOST": "100.151",
       "POOL": "farm",
-      "MHS": "4.600"
+      "MHS": "4.613"
     },
     {
       "PHONE": "S10c",
       "HOST": "100.152",
       "POOL": "farm",
-      "MHS": "4.442"
+      "MHS": "4.426"
     },
     {
       "PHONE": "S10d",
       "HOST": "100.153",
       "POOL": "farm",
-      "MHS": "4.530"
+      "MHS": "4.535"
     },
     {
       "PHONE": "S10e",
       "HOST": "100.154",
       "POOL": "farm",
-      "MHS": "4.639"
+      "MHS": "4.630"
     },
     {
       "PHONE": "S10f",
       "HOST": "100.155",
       "POOL": "farm",
-      "MHS": "4.532"
+      "MHS": "4.573"
     },
     {
       "PHONE": "S10g",
       "HOST": "100.156",
       "POOL": "farm",
-      "MHS": "4.601"
+      "MHS": "4.577"
     },
     {
       "PHONE": "S10i",
       "HOST": "100.158",
       "POOL": "farm",
-      "MHS": "5.035"
+      "MHS": "5.045"
     },
     {
       "PHONE": "S10l",
@@ -271,163 +271,163 @@
       "PHONE": "N8a",
       "HOST": "100.169",
       "POOL": "farm",
-      "MHS": "3.201"
+      "MHS": "3.204"
     },
     {
       "PHONE": "S8a",
       "HOST": "100.170",
       "POOL": "farm",
-      "MHS": "3.249"
+      "MHS": "3.227"
     },
     {
       "PHONE": "S8b",
       "HOST": "100.171",
       "POOL": "farm",
-      "MHS": "2.945"
+      "MHS": "2.935"
     },
     {
       "PHONE": "S8c",
       "HOST": "100.172",
       "POOL": "farm",
-      "MHS": "2.995"
+      "MHS": "2.986"
     },
     {
       "PHONE": "S8d",
       "HOST": "100.173",
       "POOL": "farm",
-      "MHS": "3.143"
+      "MHS": "3.146"
     },
     {
       "PHONE": "S8e",
       "HOST": "100.174",
       "POOL": "farm",
-      "MHS": "2.970"
+      "MHS": "2.980"
     },
     {
       "PHONE": "S8f",
       "HOST": "100.175",
       "POOL": "farm",
-      "MHS": "2.956"
+      "MHS": "2.965"
     },
     {
       "PHONE": "S8g",
       "HOST": "100.176",
       "POOL": "farm",
-      "MHS": "2.953"
+      "MHS": "2.948"
     },
     {
       "PHONE": "S8h",
       "HOST": "100.177",
-      "POOL": "OFF-LINE",
-      "MHS": "0.000"
+      "POOL": "farm",
+      "MHS": "3.151"
     },
     {
       "PHONE": "S8i",
       "HOST": "100.178",
       "POOL": "farm",
-      "MHS": "3.213"
+      "MHS": "3.165"
     },
     {
       "PHONE": "S8j",
       "HOST": "100.179",
       "POOL": "farm",
-      "MHS": "3.472"
+      "MHS": "3.475"
     },
     {
       "PHONE": "S8k",
       "HOST": "100.180",
       "POOL": "farm",
-      "MHS": "4.034"
+      "MHS": "4.009"
     },
     {
       "PHONE": "S8l",
       "HOST": "100.181",
       "POOL": "farm",
-      "MHS": "4.068"
+      "MHS": "4.095"
     },
     {
       "PHONE": "S8m",
       "HOST": "100.182",
-      "POOL": "OFF-LINE",
-      "MHS": "0.000"
+      "POOL": "farm",
+      "MHS": "4.042"
     },
     {
       "PHONE": "S8n",
       "HOST": "100.183",
       "POOL": "farm",
-      "MHS": "4.233"
+      "MHS": "4.188"
     },
     {
       "PHONE": "S8o",
       "HOST": "100.184",
       "POOL": "farm",
-      "MHS": "4.181"
+      "MHS": "4.180"
     },
     {
       "PHONE": "S8p",
       "HOST": "100.185",
       "POOL": "farm",
-      "MHS": "4.403"
+      "MHS": "4.420"
     },
     {
       "PHONE": "S8q",
       "HOST": "100.186",
       "POOL": "farm",
-      "MHS": "4.108"
+      "MHS": "4.125"
     },
     {
       "PHONE": "S8r",
       "HOST": "100.187",
       "POOL": "farm",
-      "MHS": "4.537"
+      "MHS": "4.556"
     },
     {
       "PHONE": "S8s",
       "HOST": "100.188",
       "POOL": "farm",
-      "MHS": "4.363"
+      "MHS": "4.330"
     },
     {
       "PHONE": "S8t",
       "HOST": "100.189",
       "POOL": "farm",
-      "MHS": "3.689"
+      "MHS": "3.713"
     },
     {
       "PHONE": "S8u",
       "HOST": "100.190",
       "POOL": "farm",
-      "MHS": "3.725"
+      "MHS": "3.733"
     },
     {
       "PHONE": "S8v",
       "HOST": "100.191",
       "POOL": "farm",
-      "MHS": "3.647"
+      "MHS": "3.651"
     },
     {
       "PHONE": "S8w",
       "HOST": "100.192",
       "POOL": "farm",
-      "MHS": "3.204"
+      "MHS": "3.203"
     },
     {
       "PHONE": "S8x",
       "HOST": "100.193",
       "POOL": "farm",
-      "MHS": "3.809"
+      "MHS": "3.814"
     },
     {
       "PHONE": "S8y",
       "HOST": "100.194",
       "POOL": "farm",
-      "MHS": "3.205"
+      "MHS": "3.183"
     },
     {
       "PHONE": "S8z",
       "HOST": "100.195",
       "POOL": "farm",
-      "MHS": "3.786"
+      "MHS": "3.792"
     },
     {
       "PHONE": "S8aa",
@@ -439,127 +439,127 @@
       "PHONE": "S8ab",
       "HOST": "100.197",
       "POOL": "farm",
-      "MHS": "4.304"
+      "MHS": "4.331"
     },
     {
       "PHONE": "S8ac",
       "HOST": "100.198",
       "POOL": "farm",
-      "MHS": "3.952"
+      "MHS": "3.933"
     },
     {
       "PHONE": "S8ad",
       "HOST": "100.167",
       "POOL": "farm",
-      "MHS": "3.767"
+      "MHS": "3.772"
     },
     {
       "PHONE": "S8ae",
       "HOST": "100.168",
       "POOL": "farm",
-      "MHS": "3.217"
+      "MHS": "3.187"
     },
     {
       "PHONE": "S8af",
       "HOST": "100.166",
       "POOL": "farm",
-      "MHS": "3.163"
+      "MHS": "3.120"
     },
     {
       "PHONE": "S8ag",
       "HOST": "100.165",
       "POOL": "farm",
-      "MHS": "3.127"
+      "MHS": "3.154"
     },
     {
       "PHONE": "S8ah",
       "HOST": "100.164",
       "POOL": "farm",
-      "MHS": "3.218"
+      "MHS": "3.178"
     },
     {
       "PHONE": "S8ai",
       "HOST": "100.163",
       "POOL": "farm",
-      "MHS": "3.206"
+      "MHS": "3.191"
     },
     {
       "PHONE": "S8aj",
       "HOST": "100.162",
-      "POOL": "OFF-LINE",
-      "MHS": "0.000"
+      "POOL": "farm",
+      "MHS": "3.653"
     },
     {
       "PHONE": "S8ak",
       "HOST": "100.206",
-      "POOL": "OFF-LINE",
-      "MHS": "0.000"
+      "POOL": "farm",
+      "MHS": "3.233"
     },
     {
       "PHONE": "S8al",
       "HOST": "100.109",
       "POOL": "farm",
-      "MHS": "3.181"
+      "MHS": "3.208"
     },
     {
       "PHONE": "S8am",
       "HOST": "100.108",
       "POOL": "farm",
-      "MHS": "3.703"
+      "MHS": "3.699"
     },
     {
       "PHONE": "S8an",
       "HOST": "100.107",
       "POOL": "farm",
-      "MHS": "3.115"
+      "MHS": "3.161"
     },
     {
       "PHONE": "S8ao",
       "HOST": "100.106",
       "POOL": "farm",
-      "MHS": "3.716"
+      "MHS": "3.731"
     },
     {
       "PHONE": "P20c",
       "HOST": "100.212",
       "POOL": "farm",
-      "MHS": "0.608"
+      "MHS": "0.607"
     },
     {
       "PHONE": "P20d",
       "HOST": "100.213",
       "POOL": "farm",
-      "MHS": "1.031"
+      "MHS": "1.022"
     },
     {
       "PHONE": "P20f",
       "HOST": "100.215",
       "POOL": "farm",
-      "MHS": "4.274"
+      "MHS": "4.254"
     },
     {
       "PHONE": "P20h",
       "HOST": "100.217",
       "POOL": "farm",
-      "MHS": "4.618"
+      "MHS": "4.630"
     },
     {
       "PHONE": "P20i",
       "HOST": "100.218",
       "POOL": "farm",
-      "MHS": "4.558"
+      "MHS": "4.566"
     },
     {
       "PHONE": "P20j",
       "HOST": "100.219",
       "POOL": "farm",
-      "MHS": "4.352"
+      "MHS": "4.342"
     },
     {
       "PHONE": "P20k",
       "HOST": "100.220",
       "POOL": "farm",
-      "MHS": "4.443"
+      "MHS": "4.433"
     },
     {
       "PHONE": "P20m",
@@ -571,37 +571,37 @@
       "PHONE": "P10a",
       "HOST": "100.225",
       "POOL": "farm",
-      "MHS": "1.261"
+      "MHS": "1.270"
     },
     {
       "PHONE": "M20a",
       "HOST": "100.226",
       "POOL": "farm",
-      "MHS": "2.698"
+      "MHS": "2.696"
     },
     {
       "PHONE": "P9a",
       "HOST": "100.235",
       "POOL": "farm",
-      "MHS": "4.601"
+      "MHS": "4.614"
     },
     {
       "PHONE": "P9b",
       "HOST": "100.236",
       "POOL": "farm",
-      "MHS": "4.632"
+      "MHS": "4.635"
     },
     {
       "PHONE": "P9c",
       "HOST": "100.237",
       "POOL": "farm",
-      "MHS": "4.624"
+      "MHS": "4.623"
     },
     {
       "PHONE": "HNRa",
       "HOST": "100.240",
       "POOL": "farm",
-      "MHS": "0.208"
+      "MHS": "0.211"
     },
     {
       "PHONE": "HNRb",
@@ -613,151 +613,151 @@
       "PHONE": "HNRc",
       "HOST": "100.242",
       "POOL": "farm",
-      "MHS": "5.007"
+      "MHS": "5.004"
     },
     {
       "PHONE": "LGa",
       "HOST": "100.249",
       "POOL": "farm",
-      "MHS": "4.581"
+      "MHS": "4.546"
     },
     {
       "PHONE": "A30b",
       "HOST": "102.002",
       "POOL": "farm",
-      "MHS": "4.194"
+      "MHS": "4.200"
     },
     {
       "PHONE": "A30c",
       "HOST": "102.003",
       "POOL": "farm",
-      "MHS": "4.200"
+      "MHS": "4.209"
     },
     {
       "PHONE": "A30d",
       "HOST": "102.004",
       "POOL": "farm",
-      "MHS": "4.209"
+      "MHS": "4.200"
     },
     {
       "PHONE": "A30e",
       "HOST": "102.005",
       "POOL": "farm",
-      "MHS": "3.553"
+      "MHS": "3.570"
     },
     {
       "PHONE": "A30f",
       "HOST": "102.006",
       "POOL": "farm",
-      "MHS": "4.202"
+      "MHS": "4.204"
     },
     {
       "PHONE": "A30g",
       "HOST": "102.007",
       "POOL": "farm",
-      "MHS": "4.037"
+      "MHS": "4.032"
     },
     {
       "PHONE": "A30h",
       "HOST": "102.008",
       "POOL": "farm",
-      "MHS": "4.032"
+      "MHS": "4.030"
     },
     {
       "PHONE": "A50a",
       "HOST": "102.101",
       "POOL": "farm",
-      "MHS": "4.143"
+      "MHS": "4.154"
     },
     {
       "PHONE": "A50b",
       "HOST": "102.102",
       "POOL": "farm",
-      "MHS": "4.201"
+      "MHS": "4.267"
     },
     {
       "PHONE": "A50c",
       "HOST": "102.103",
       "POOL": "farm",
-      "MHS": "4.175"
+      "MHS": "4.170"
     },
     {
       "PHONE": "A50d",
       "HOST": "102.104",
       "POOL": "farm",
-      "MHS": "4.080"
+      "MHS": "4.076"
     },
     {
       "PHONE": "A50e",
       "HOST": "102.105",
       "POOL": "farm",
-      "MHS": "4.233"
+      "MHS": "4.246"
     },
     {
       "PHONE": "A50f",
       "HOST": "102.106",
       "POOL": "farm",
-      "MHS": "4.065"
+      "MHS": "4.080"
     },
     {
       "PHONE": "A50g",
       "HOST": "102.107",
       "POOL": "farm",
-      "MHS": "3.943"
+      "MHS": "3.926"
     },
     {
       "PHONE": "A50h",
       "HOST": "102.108",
       "POOL": "farm",
-      "MHS": "4.151"
+      "MHS": "4.147"
     },
     {
       "PHONE": "A50i",
       "HOST": "102.109",
       "POOL": "farm",
-      "MHS": "3.674"
+      "MHS": "3.692"
     },
     {
       "PHONE": "A50j",
       "HOST": "102.110",
       "POOL": "farm",
-      "MHS": "3.338"
+      "MHS": "3.331"
     },
     {
       "PHONE": "A50k",
       "HOST": "102.111",
       "POOL": "farm",
-      "MHS": "3.623"
+      "MHS": "3.650"
     },
     {
       "PHONE": "A50l",
       "HOST": "102.112",
       "POOL": "farm",
-      "MHS": "3.610"
+      "MHS": "3.606"
     },
     {
       "PHONE": "A70a",
       "HOST": "102.201",
       "POOL": "farm",
-      "MHS": "5.053"
+      "MHS": "5.048"
     },
     {
       "PHONE": "A70b",
       "HOST": "102.202",
       "POOL": "farm",
-      "MHS": "4.941"
+      "MHS": "4.937"
     },
     {
       "PHONE": "A70c",
       "HOST": "102.203",
       "POOL": "farm",
-      "MHS": "4.991"
+      "MHS": "5.021"
     },
     {
       "PHONE": "A70d",
       "HOST": "102.204",
       "POOL": "farm",
-      "MHS": "5.037"
+      "MHS": "5.040"
     },
     {
       "PHONE": "A70e",
@@ -769,25 +769,25 @@
       "PHONE": "A70g",
       "HOST": "102.207",
       "POOL": "farm",
-      "MHS": "4.967"
+      "MHS": "4.948"
     },
     {
       "PHONE": "A70h",
       "HOST": "102.208",
       "POOL": "farm",
-      "MHS": "4.781"
+      "MHS": "4.768"
     }
   ],
   "SUMM": [
     {
       "all_dev": 129,
-      "mhs_all": 460.507,
-      "dev_active": 120,
-      "dev_inactive": 9,
+      "mhs_all": 482.031,
+      "dev_active": 126,
+      "dev_inactive": 3,
       "dev_off": 23,
-      "vrsc_day": 0.6,
-      "usdt_day": 2.52,
-      "summ_time": "17:24:58",
+      "vrsc_day": 0.82,
+      "usdt_day": 3.42,
+      "summ_time": "17:41:24",
       "iteration": 1
     }
   ],
@@ -800,6 +800,7 @@
           "S9c",
           "S9d",
           "S9e",
+          "S9f",
           "S9g",
           "S9h",
           "S9j",
@@ -809,6 +810,7 @@
           "S9o",
           "S9p",
           "S9q",
+          "S9r",
           "S9s",
           "S9t",
           "S9u",
@@ -843,10 +845,12 @@
           "S8e",
           "S8f",
           "S8g",
+          "S8h",
           "S8i",
           "S8j",
           "S8k",
           "S8l",
+          "S8m",
           "S8n",
           "S8o",
           "S8p",
@@ -869,6 +873,8 @@
           "S8ag",
           "S8ah",
           "S8ai",
+          "S8aj",
+          "S8ak",
           "S8al",
           "S8am",
           "S8an",
@@ -916,23 +922,17 @@
           "A70g",
           "A70h"
         ],
-        "nr-devs": "120"
+        "nr-devs": "126"
       }
     },
     {
       "OFF-LINE": {
         "devices": [
-          "S9f",
           "S9i",
           "S9m",
-          "S9r",
-          "S8h",
-          "S8m",
-          "S8aj",
-          "S8ak",
           "HNRb"
         ],
-        "nr-devs": "9"
+        "nr-devs": "3"
       }
     }
   ]
