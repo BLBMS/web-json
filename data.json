@@ -1,25 +1,25 @@
 {
   "DATE": [
-    "21:46:27 17.04.2025"
+    "21:48:40 17.04.2025"
   ],
   "DATA": [
     {
       "PHONE": "S10a",
       "HOST": "100.150",
       "POOL": "farm",
-      "MHS": "4.585"
+      "MHS": "4.586"
     },
     {
       "PHONE": "S10f",
       "HOST": "100.155",
       "POOL": "farm",
-      "MHS": "4.533"
+      "MHS": "4.532"
     },
     {
       "PHONE": "S10g",
       "HOST": "100.156",
       "POOL": "farm",
-      "MHS": "4.676"
+      "MHS": "4.684"
     },
     {
       "PHONE": "HNRa",
@@ -37,55 +37,55 @@
       "PHONE": "HNRc",
       "HOST": "100.242",
       "POOL": "farm",
-      "MHS": "4.932"
+      "MHS": "4.933"
     },
     {
       "PHONE": "A50j",
       "HOST": "102.110",
       "POOL": "farm",
-      "MHS": "3.326"
+      "MHS": "3.327"
     },
     {
       "PHONE": "A50k",
       "HOST": "102.111",
       "POOL": "farm",
-      "MHS": "3.563"
+      "MHS": "3.566"
     },
     {
       "PHONE": "A50l",
       "HOST": "102.112",
       "POOL": "farm",
-      "MHS": "3.659"
+      "MHS": "3.661"
     },
     {
       "PHONE": "A70a",
       "HOST": "102.201",
       "POOL": "farm",
-      "MHS": "5.059"
+      "MHS": "5.056"
     },
     {
       "PHONE": "A70b",
       "HOST": "102.202",
       "POOL": "farm",
-      "MHS": "4.827"
+      "MHS": "4.837"
     },
     {
       "PHONE": "A70c",
       "HOST": "102.203",
       "POOL": "farm",
-      "MHS": "4.948"
+      "MHS": "4.949"
     },
     {
       "PHONE": "A70d",
       "HOST": "102.204",
       "POOL": "farm",
-      "MHS": "5.044"
+      "MHS": "5.051"
     },
     {
       "PHONE": "A70e",
       "HOST": "102.205",
       "POOL": "farm",
-      "MHS": "4.948"
+      "MHS": "4.954"
     },
     {
       "PHONE": "A70g",
@@ -97,20 +97,20 @@
       "PHONE": "A70h",
       "HOST": "102.208",
       "POOL": "farm",
-      "MHS": "4.769"
+      "MHS": "4.774"
     }
   ],
   "SUMM": [
     {
       "all_dev": 16,
-      "mhs_all": 63.778,
+      "mhs_all": 63.819,
       "dev_active": 14,
       "dev_inactive": 2,
       "dev_off": 2,
       "vrsc_day": 0.1,
       "usdt_day": 0.25,
-      "summ_time": "21:46:27",
-      "iteration": 43
+      "summ_time": "21:48:40",
+      "iteration": 44
     }
   ],
   "SORT": [
