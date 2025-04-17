@@ -1,25 +1,25 @@
 {
   "DATE": [
-    "21:50:52 17.04.2025"
+    "21:53:05 17.04.2025"
   ],
   "DATA": [
     {
       "PHONE": "S10a",
       "HOST": "100.150",
       "POOL": "farm",
-      "MHS": "4.585"
+      "MHS": "4.584"
     },
     {
       "PHONE": "S10f",
       "HOST": "100.155",
       "POOL": "farm",
-      "MHS": "4.530"
+      "MHS": "4.527"
     },
     {
       "PHONE": "S10g",
       "HOST": "100.156",
       "POOL": "farm",
-      "MHS": "4.699"
+      "MHS": "4.701"
     },
     {
       "PHONE": "HNRa",
@@ -37,13 +37,13 @@
       "PHONE": "HNRc",
       "HOST": "100.242",
       "POOL": "farm",
-      "MHS": "4.937"
+      "MHS": "4.938"
     },
     {
       "PHONE": "A50j",
       "HOST": "102.110",
       "POOL": "farm",
-      "MHS": "3.326"
+      "MHS": "3.325"
     },
     {
       "PHONE": "A50k",
@@ -61,19 +61,19 @@
       "PHONE": "A70a",
       "HOST": "102.201",
       "POOL": "farm",
-      "MHS": "5.054"
+      "MHS": "5.055"
     },
     {
       "PHONE": "A70b",
       "HOST": "102.202",
       "POOL": "farm",
-      "MHS": "4.838"
+      "MHS": "4.844"
     },
     {
       "PHONE": "A70c",
       "HOST": "102.203",
       "POOL": "farm",
-      "MHS": "4.944"
+      "MHS": "4.943"
     },
     {
       "PHONE": "A70d",
@@ -85,32 +85,32 @@
       "PHONE": "A70e",
       "HOST": "102.205",
       "POOL": "farm",
-      "MHS": "4.961"
+      "MHS": "4.960"
     },
     {
       "PHONE": "A70g",
       "HOST": "102.207",
       "POOL": "farm",
-      "MHS": "4.924"
+      "MHS": "4.925"
     },
     {
       "PHONE": "A70h",
       "HOST": "102.208",
       "POOL": "farm",
-      "MHS": "4.770"
+      "MHS": "4.772"
     }
   ],
   "SUMM": [
     {
       "all_dev": 16,
-      "mhs_all": 63.843,
+      "mhs_all": 63.849,
       "dev_active": 14,
       "dev_inactive": 2,
       "dev_off": 2,
       "vrsc_day": 0.1,
       "usdt_day": 0.25,
-      "summ_time": "21:50:52",
-      "iteration": 45
+      "summ_time": "21:53:01",
+      "iteration": 46
     }
   ],
   "SORT": [
