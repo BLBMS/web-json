@@ -1,13 +1,13 @@
 {
   "DATE": [
-    "00:18:43 18.04.2025"
+    "00:19:49 18.04.2025"
   ],
   "DATA": [
     {
       "PHONE": "Miner9a",
       "HOST": "100.110",
       "POOL": "farm",
-      "MHS": "3.771"
+      "MHS": "3.786"
     },
     {
       "PHONE": "Miner8c",
@@ -43,14 +43,14 @@
   "SUMM": [
     {
       "all_dev": 6,
-      "mhs_all": 12.139,
+      "mhs_all": 12.154,
       "dev_active": 3,
       "dev_inactive": 3,
       "dev_off": 2,
       "vrsc_day": 0.02,
       "usdt_day": 0.05,
-      "summ_time": "00:18:43",
-      "iteration": 6
+      "summ_time": "00:19:49",
+      "iteration": 7
     }
   ],
   "SORT": [
